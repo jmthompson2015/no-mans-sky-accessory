@@ -1,24 +1,20 @@
 module.exports = {
   env: {
-    browser: true,
+    browser: true
   },
-  extends: ['airbnb', 'prettier'],
+  extends: ["airbnb", "prettier"],
   globals: {
-    AA: true,
-    AM: true,
-    AS: true,
-    AV: true,
     Immutable: true,
     PropTypes: true,
     QUnit: true,
     R: true,
     React: true,
+    Reactable: true,
     ReactDOM: true,
-    ReactDOMFactories: true,
-    Redux: true,
+    ReactDOMFactories: true
   },
   rules: {
-    'import/extensions': ['error', { js: 'always' }],
-    'max-len': ['error', { code: 100, ignoreUrls: true }],
-  },
+    "import/extensions": ["error", { js: "always" }],
+    "max-len": ["error", { code: 100, ignoreUrls: true }]
+  }
 };
