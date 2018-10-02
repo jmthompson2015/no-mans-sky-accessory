@@ -1,0 +1,41 @@
+{
+  "name": "no-mans-sky-accessory",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmthompson2015/no-mans-sky-accessory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmthompson2015/no-mans-sky-accessory/issues"
+  },
+  "homepage": "https://github.com/jmthompson2015/no-mans-sky-accessory#readme",
+  "dependencies": {
+    "ajv": "^6.5.4",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "fs": "0.0.1-security",
+    "prop-types": "^15.6.2",
+    "ramda": "^0.25.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-dom-factories": "^1.0.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "seamless-immutable": "^7.1.4"
+  },
+  "devDependencies": {
+    "qunit": "^2.6.2"
+  }
+}
