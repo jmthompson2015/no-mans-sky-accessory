@@ -9,7 +9,9 @@ const ProductListGenerator = {};
 
 const INPUT_FILE = "../Product.js";
 const OUTPUT_FILE = "./ProductList.js";
-const HEADER = `const ProductList = [
+const HEADER = `// GENERATED FILE: Do not edit.
+
+const ProductList = [
 `;
 const FOOTER = `];
 
@@ -17,10 +19,14 @@ module.exports = ProductList;
 `;
 
 const extract = (string, startKey, endKey) => {
-  const startIndex = string.indexOf(startKey) + startKey.length;
-  const endIndex = string.indexOf(endKey, startIndex);
+  if (!["", "\n"].includes(string)) {
+    const startIndex = string.indexOf(startKey) + startKey.length;
+    const endIndex = string.indexOf(endKey, startIndex);
 
-  return string.substring(startIndex, endIndex);
+    return string.substring(startIndex, endIndex);
+  }
+
+  return undefined;
 };
 
 const writeFile = (outputFile, content) => {
@@ -46,9 +52,9 @@ ProductListGenerator.convert = () => {
     const data1 = extract(data, startKey, endKey);
     const dataRows = data1.split("},");
 
-    const reduceFunction = (accum, dataRow) => `${accum} ${extract(dataRow, "name: ", ", ")},
-`;
-    const content = R.reduce(reduceFunction, HEADER, dataRows) + FOOTER;
+    const reduceFunction = (accum, dataRow) => R.append(extract(dataRow, "name: ", ","), accum);
+    const array = R.reduce(reduceFunction, [], dataRows);
+    const content = HEADER + array.join(",\n") + FOOTER;
 
     writeFile(OUTPUT_FILE, content);
   });

@@ -91,7 +91,7 @@ const CrafterRecipe = [
     inputs: [
       resourceIngredient(Resource.CHROMATIC_METAL, 200),
       resourceIngredient(Resource.SODIUM_NITRATE, 100),
-      resourceIngredient(Product.MICROPROCESSOR, 5)
+      productIngredient(Product.MICROPROCESSOR, 5)
     ],
     device: Device.CRAFTER
   },

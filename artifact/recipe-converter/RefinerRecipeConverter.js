@@ -11,7 +11,9 @@ const RefinerRecipeConverter = {};
 
 const INPUT_FILE = "NMS Next 1.59 Refinery recipes - 1.59 full list.csv";
 const OUTPUT_FILE = "../RefinerRecipe.js";
-const HEADER = `import Device from "./Device.js";
+const HEADER = `// GENERATED FILE: Do not edit.
+
+import Device from "./Device.js";
 import Ingredient from "./Ingredient.js";
 import Product from "./Product.js";
 import Resource from "./Resource.js";

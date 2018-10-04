@@ -53,10 +53,10 @@ QUnit.test("keys()", assert => {
 
   // Verify.
   assert.ok(result);
-  const length = 25;
+  const length = 115;
   assert.equal(result.length, length);
   assert.equal(result[0], Product.ACID);
-  assert.equal(result[length - 1], Product.WARP_CELL);
+  assert.equal(result[length - 1], Product.WEAPONS_RESEARCH);
 
   const properties = Object.getOwnPropertyNames(Product);
   const count = properties.length - 1; // properties

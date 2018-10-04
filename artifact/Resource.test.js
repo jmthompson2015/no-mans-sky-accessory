@@ -53,7 +53,7 @@ QUnit.test("keys()", assert => {
 
   // Verify.
   assert.ok(result);
-  const length = 70;
+  const length = 53;
   assert.equal(result.length, length);
   assert.equal(result[0], Resource.ACTIVATED_CADMIUM);
   assert.equal(result[length - 1], Resource.VISCOUS_FLUIDS);
