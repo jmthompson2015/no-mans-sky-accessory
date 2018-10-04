@@ -11,14 +11,37 @@ QUnit.test("Product properties Carbon Nanotubes", assert => {
   assert.equal(properties.key, "carbonNanotubes");
 });
 
+const VALUE_EXCEPTIONS = [
+  "AtlasPass v1",
+  "AtlasPass v2",
+  "AtlasPass v3",
+
+  "Albumen Pearl Orb",
+  "Echinocactus",
+  "Frostwort",
+  "Fungal Cluster",
+  "Gamma Weed",
+  "Gravitino Host",
+  "Hydroponic Tray",
+  "Large Hydroponic Tray",
+  "Mordite Root",
+  "Solar Vine",
+  "Standing Planter",
+  "Venom Urchin",
+
+  "Large Refiner",
+  "Medium Refiner",
+  "Portable Refiner"
+];
+
 QUnit.skip("Product baseValue", assert => {
   let errors = "";
-  const forEachFunction = resource => {
-    if (resource.baseValue === undefined) {
-      errors += `Missing baseValue for resource ${resource.name}
+  const forEachFunction = product => {
+    if (product.baseValue === undefined && !VALUE_EXCEPTIONS.includes(product.name)) {
+      errors += `Missing baseValue for product ${product.name}
 `;
+      assert.ok(product.baseValue, `Missing baseValue for product ${product.name}`);
     }
-    assert.ok(resource.baseValue, `Missing baseValue for resource ${resource.name}`);
   };
   R.forEach(forEachFunction, Object.values(Product.properties));
   console.log(errors);
@@ -53,10 +76,10 @@ QUnit.test("keys()", assert => {
 
   // Verify.
   assert.ok(result);
-  const length = 115;
+  const length = 111;
   assert.equal(result.length, length);
   assert.equal(result[0], Product.ACID);
-  assert.equal(result[length - 1], Product.WEAPONS_RESEARCH);
+  assert.equal(result[length - 1], Product.WARP_CELL);
 
   const properties = Object.getOwnPropertyNames(Product);
   const count = properties.length - 1; // properties

@@ -1,3 +1,5 @@
+/* eslint no-console: ["error", { allow: ["log", "warn"] }] */
+
 import CrafterRecipe from "./CrafterRecipe.js";
 import Product from "./Product.js";
 
@@ -39,13 +41,19 @@ QUnit.test("CrafterRecipe output", assert => {
 });
 
 QUnit.skip("CrafterRecipe exists for product", assert => {
+  let errors = "";
   const forEachFunction = productKey => {
     if (![Product.NANITE_CLUSTERS].includes(productKey)) {
       const recipes = R.filter(recipe => recipe.output.productKey === productKey, CrafterRecipe);
       assert.equal(recipes.length, 1, `Missing recipe for ${productKey}`);
+      if (recipes.length !== 1) {
+        errors += `Missing recipe for ${productKey}
+`;
+      }
     }
   };
   R.forEach(forEachFunction, Object.keys(Product.properties));
+  console.log(errors);
 });
 
 const CrafterRecipeTest = {};

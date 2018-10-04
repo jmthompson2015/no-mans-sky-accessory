@@ -29,16 +29,7 @@ Object.freeze(Product);
 export default Product;
 `;
 
-const ADD_PRODUCTS = [
-  "Advanced Ion Battery",
-  "Antimatter",
-  "Glass",
-  "Large Refiner",
-  "Medium Refiner",
-  "Microprocessor",
-  "Nanite Clusters",
-  "Portable Refiner"
-];
+const ADD_PRODUCTS = ["Large Refiner", "Medium Refiner", "Nanite Clusters", "Portable Refiner"];
 
 const BASE_VALUES = {
   acid: 188000,
@@ -53,18 +44,14 @@ const BASE_VALUES = {
   heatCapacitor: 180000,
   herox: 25000,
   ionBattery: 200,
-  // largeRefiner: { name: "Large Refiner", key: "largeRefiner" },
   lifeSupportGel: 200,
   liquidExplosive: 800500,
   livingGlass: 566000,
   lubricant: 110000,
   magnoGold: 25000,
-  // mediumRefiner: { name: "Medium Refiner", key: "mediumRefiner" },
   metalPlating: 800,
   microprocessor: 2000,
-  // naniteClusters: { name: "Nanite Clusters", key: "naniteClusters" },
   polyFibre: 130000,
-  // portableRefiner: { name: "Portable Refiner", key: "portableRefiner" },
   starshipLaunchFuel: 450,
   tetracobalt: 6150,
   unstableGel: 50000,
@@ -84,7 +71,7 @@ const writeFile = (outputFile, content) => {
 };
 
 const extractLinkName = anchorRow => {
-  const index1 = anchorRow.lastIndexOf("</a>");
+  const index1 = anchorRow.indexOf("</a>");
   const index0 = anchorRow.lastIndexOf(">", index1);
 
   return anchorRow.substring(index0 + 1, index1);

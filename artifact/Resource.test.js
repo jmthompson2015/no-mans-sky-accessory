@@ -11,7 +11,7 @@ QUnit.test("Resource properties Ammonia", assert => {
   assert.equal(properties.baseValue, 62);
 });
 
-QUnit.skip("Resource baseValue", assert => {
+QUnit.test("Resource baseValue", assert => {
   let errors = "";
   const forEachFunction = resource => {
     if (resource.baseValue === undefined) {

@@ -15,7 +15,6 @@ const Product = {
   ATLASPASS_V1: "atlaspassV1",
   ATLASPASS_V2: "atlaspassV2",
   ATLASPASS_V3: "atlaspassV3",
-  AWAKENINGS: "awakenings",
   CAPTURED_NANODE: "capturedNanode",
   CARBON_CRYSTAL: "carbonCrystal",
   CARBON_NANOTUBES: "carbonNanotubes",
@@ -34,11 +33,10 @@ const Product = {
   ECHINOCACTUS: "echinocactus",
   ENGLOBED_SHADE: "englobedShade",
   ENRICHED_CARBON: "enrichedCarbon",
-  EXPANDING_THE_BASE: "expandingTheBase",
   EXPLOSIVE_DRONES: "explosiveDrones",
-  FLEET_COMMAND_ROOM: "fleetCommandRoom",
   FRIGATE_FUEL_100_TONNES: "frigateFuel100Tonnes",
   FRIGATE_FUEL_200_TONNES: "frigateFuel200Tonnes",
+  FRIGATE_FUEL_50_TONNES: "frigateFuel50Tonnes",
   FROSTWORT: "frostwort",
   FUEL_OXIDISER: "fuelOxidiser",
   FUNGAL_CLUSTER: "fungalCluster",
@@ -93,14 +91,12 @@ const Product = {
   PORTABLE_REACTOR: "portableReactor",
   PORTABLE_REFINER: "portableRefiner",
   PROJECTILE_AMMUNITION: "projectileAmmunition",
+  QUAD_SERVO: "quadServo",
   QUANTUM_PROCESSOR: "quantumProcessor",
   RARE_METAL_ELEMENT: "rareMetalElement",
   SALT_REFRACTOR: "saltRefractor",
   SALVAGED_TECHNOLOGY: "salvagedTechnology",
-  SCIENTIFIC_RESEARCH: "scientificResearch",
   SEMICONDUCTOR: "semiconductor",
-  SENTINEL_QUAD: "sentinelQuad",
-  SENTINEL_WALKER: "sentinelWalker",
   SODIUM_DIODE: "sodiumDiode",
   SOLAR_VINE: "solarVine",
   STANDING_PLANTER: "standingPlanter",
@@ -118,8 +114,8 @@ const Product = {
   VENOM_URCHIN: "venomUrchin",
   VYKEEN_DAGGER: "vykeenDagger",
   VYKEEN_EFFIGY: "vykeenEffigy",
+  WALKER_BRAIN: "walkerBrain",
   WARP_CELL: "warpCell",
-  WEAPONS_RESEARCH: "weaponsResearch",
 };
 
 Product.properties = {
@@ -132,6 +128,7 @@ Product.properties = {
   advancedIonBattery: {
     name: "Advanced Ion Battery",
     baseValue: 500,
+    groupKey: ProductGroup.CONSUMABLE_PORTABLE_ENERGY_STORAGE,
     key: "advancedIonBattery"
   },
   albumenPearlOrb: {
@@ -149,6 +146,7 @@ Product.properties = {
   antimatter: {
     name: "Antimatter",
     baseValue: 5233,
+    groupKey: ProductGroup.COMPONENT_CRAFTED_TECHNOLOGY_COMPONENT,
     key: "antimatter"
   },
   antimatterHousing: {
@@ -180,12 +178,6 @@ Product.properties = {
     baseValue: undefined,
     groupKey: ProductGroup.CURIOSITY_ACCESS_CARD,
     key: "atlaspassV3"
-  },
-  awakenings: {
-    name: "Awakenings",
-    baseValue: undefined,
-    groupKey: ProductGroup.COMPONENT_CRAFTED_TECHNOLOGY_COMPONENT,
-    key: "awakenings"
   },
   capturedNanode: {
     name: "Captured Nanode",
@@ -295,23 +287,11 @@ Product.properties = {
     groupKey: ProductGroup.TRADE_ITEM_ENHANCED_GAS_PRODUCT,
     key: "enrichedCarbon"
   },
-  expandingTheBase: {
-    name: "Expanding the Base",
-    baseValue: undefined,
-    groupKey: ProductGroup.TRADE_ITEM_ADVANCED_AGRICULTURAL_PRODUCT,
-    key: "expandingTheBase"
-  },
   explosiveDrones: {
     name: "Explosive Drones",
     baseValue: undefined,
     groupKey: ProductGroup.CONSUMABLE_CONSUMABLE_FRIGATE_UPGRADE,
     key: "explosiveDrones"
-  },
-  fleetCommandRoom: {
-    name: "Fleet Command Room",
-    baseValue: undefined,
-    groupKey: ProductGroup.CONSUMABLE_STABILISED_DI_HYDROGEN_FUEL,
-    key: "fleetCommandRoom"
   },
   frigateFuel100Tonnes: {
     name: "Frigate Fuel (100 Tonnes)",
@@ -324,6 +304,12 @@ Product.properties = {
     baseValue: undefined,
     groupKey: ProductGroup.CONSUMABLE_STABILISED_DI_HYDROGEN_FUEL,
     key: "frigateFuel200Tonnes"
+  },
+  frigateFuel50Tonnes: {
+    name: "Frigate Fuel (50 Tonnes)",
+    baseValue: undefined,
+    groupKey: ProductGroup.CONSUMABLE_STABILISED_DI_HYDROGEN_FUEL,
+    key: "frigateFuel50Tonnes"
   },
   frostwort: {
     name: "Frostwort",
@@ -382,6 +368,7 @@ Product.properties = {
   glass: {
     name: "Glass",
     baseValue: 13000,
+    groupKey: ProductGroup.TRADE_ITEM_ADVANCED_AGRICULTURAL_PRODUCT,
     key: "glass"
   },
   grantine: {
@@ -535,6 +522,7 @@ Product.properties = {
   microprocessor: {
     name: "Microprocessor",
     baseValue: 2000,
+    groupKey: ProductGroup.COMPONENT_CRAFTED_TECHNOLOGY_COMPONENT,
     key: "microprocessor"
   },
   mindArc: {
@@ -643,6 +631,12 @@ Product.properties = {
     groupKey: ProductGroup.CONSUMABLE_UNIVERSAL_AMMO_MODULE,
     key: "projectileAmmunition"
   },
+  quadServo: {
+    name: "Quad Servo",
+    baseValue: undefined,
+    groupKey: ProductGroup.COMPONENT_ANOMALOUS_MATERIAL,
+    key: "quadServo"
+  },
   quantumProcessor: {
     name: "Quantum Processor",
     baseValue: undefined,
@@ -667,29 +661,11 @@ Product.properties = {
     groupKey: ProductGroup.CURIOSITY_DAMAGED_DATA_UNIT,
     key: "salvagedTechnology"
   },
-  scientificResearch: {
-    name: "Scientific Research",
-    baseValue: undefined,
-    groupKey: ProductGroup.COMPONENT_CRAFTED_TECHNOLOGY_COMPONENT,
-    key: "scientificResearch"
-  },
   semiconductor: {
     name: "Semiconductor",
     baseValue: undefined,
     groupKey: ProductGroup.TRADE_ITEM_MANUFACTURED_GAS_PRODUCT,
     key: "semiconductor"
-  },
-  sentinelQuad: {
-    name: "Sentinel Quad",
-    baseValue: undefined,
-    groupKey: ProductGroup.COMPONENT_ANOMALOUS_MATERIAL,
-    key: "sentinelQuad"
-  },
-  sentinelWalker: {
-    name: "Sentinel Walker",
-    baseValue: undefined,
-    groupKey: ProductGroup.COMPONENT_ANOMALOUS_MATERIAL,
-    key: "sentinelWalker"
   },
   sodiumDiode: {
     name: "Sodium Diode",
@@ -793,17 +769,17 @@ Product.properties = {
     groupKey: ProductGroup.CURIOSITY_MEDIUM_VALUE_CURIOSITY,
     key: "vykeenEffigy"
   },
+  walkerBrain: {
+    name: "Walker Brain",
+    baseValue: undefined,
+    groupKey: ProductGroup.COMPONENT_ANOMALOUS_MATERIAL,
+    key: "walkerBrain"
+  },
   warpCell: {
     name: "Warp Cell",
     baseValue: 46750,
     groupKey: ProductGroup.CONSUMABLE_HYPERDRIVE_CHARGING_UNIT,
     key: "warpCell"
-  },
-  weaponsResearch: {
-    name: "Weapons Research",
-    baseValue: undefined,
-    groupKey: ProductGroup.CONSUMABLE_PORTABLE_ENERGY_STORAGE,
-    key: "weaponsResearch"
   },
 };
 
