@@ -44,5 +44,27 @@ QUnit.test("toString() ingredients", assert => {
   assert.equal(result, "Carbon x5 + Oxygen x2");
 });
 
+QUnit.test("value() Carbon", assert => {
+  // Setup.
+  const ingredient = Ingredient.create({ resourceKey: Resource.CARBON, amount: 5 });
+
+  // Run.
+  const result = IngredientUtilities.value(ingredient);
+
+  // Verify.
+  assert.equal(result, 35);
+});
+
+QUnit.test("value() Large Refiner", assert => {
+  // Setup.
+  const ingredient = Ingredient.create({ productKey: Product.LARGE_REFINER });
+
+  // Run.
+  const result = IngredientUtilities.value(ingredient);
+
+  // Verify.
+  assert.equal(result, undefined);
+});
+
 const IngredientUtilitiesTest = {};
 export default IngredientUtilitiesTest;

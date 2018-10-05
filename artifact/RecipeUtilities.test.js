@@ -3,6 +3,28 @@ import RefinerRecipe from "./RefinerRecipe.js";
 
 QUnit.module("RecipeUtilities");
 
+QUnit.test("inputValue() 0", assert => {
+  // Setup.
+  const recipe = RefinerRecipe[0];
+
+  // Run.
+  const result = RecipeUtilities.inputValue(recipe);
+
+  // Verify.
+  assert.equal(result, 654);
+});
+
+QUnit.test("outputValue() 0", assert => {
+  // Setup.
+  const recipe = RefinerRecipe[0];
+
+  // Run.
+  const result = RecipeUtilities.outputValue(recipe);
+
+  // Verify.
+  assert.equal(result, 202);
+});
+
 QUnit.test("toString() 0", assert => {
   // Setup.
   const recipe = RefinerRecipe[0];

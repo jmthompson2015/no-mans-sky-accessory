@@ -21,8 +21,17 @@ IngredientUtilities.toString = ingredient => {
     return arrayToString(ingredient);
   }
 
-  const productOrResource = IngredientUtilities.thing(ingredient);
-  return `${productOrResource.name} x${ingredient.amount}`;
+  const thing = IngredientUtilities.thing(ingredient);
+
+  return `${thing.name} x${ingredient.amount}`;
+};
+
+IngredientUtilities.value = ingredient => {
+  const thing = IngredientUtilities.thing(ingredient);
+  const { baseValue } = thing;
+  const { amount } = ingredient;
+
+  return baseValue && amount ? baseValue * amount : undefined;
 };
 
 export default IngredientUtilities;

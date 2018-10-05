@@ -11,7 +11,7 @@ const TableColumns = [
   },
   {
     key: "outputValue",
-    label: "Value",
+    label: "Base Value",
     className: "tr"
   },
   {
@@ -36,7 +36,7 @@ const TableColumns = [
   },
   {
     key: "input1Value",
-    label: "Value",
+    label: "Base Value",
     className: "tr"
   },
   {
@@ -51,7 +51,7 @@ const TableColumns = [
   },
   {
     key: "input2Value",
-    label: "Value",
+    label: "Base Value",
     className: "tr"
   },
   {
@@ -66,7 +66,7 @@ const TableColumns = [
   },
   {
     key: "input3Value",
-    label: "Value",
+    label: "Base Value",
     className: "tr"
   },
   {
