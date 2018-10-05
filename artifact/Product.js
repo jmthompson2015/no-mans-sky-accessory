@@ -199,7 +199,7 @@ Product.properties = {
   },
   chlorideLattice: {
     name: "Chloride Lattice",
-    baseValue: undefined,
+    baseValue: 6150,
     groupKey: ProductGroup.CURIOSITY_CONCENTRATED_DEPOSIT,
     key: "chlorideLattice"
   },
@@ -295,19 +295,19 @@ Product.properties = {
   },
   frigateFuel100Tonnes: {
     name: "Frigate Fuel (100 Tonnes)",
-    baseValue: undefined,
+    baseValue: 40000,
     groupKey: ProductGroup.CONSUMABLE_STABILISED_DI_HYDROGEN_FUEL,
     key: "frigateFuel100Tonnes"
   },
   frigateFuel200Tonnes: {
     name: "Frigate Fuel (200 Tonnes)",
-    baseValue: undefined,
+    baseValue: 80000,
     groupKey: ProductGroup.CONSUMABLE_STABILISED_DI_HYDROGEN_FUEL,
     key: "frigateFuel200Tonnes"
   },
   frigateFuel50Tonnes: {
     name: "Frigate Fuel (50 Tonnes)",
-    baseValue: undefined,
+    baseValue: 20000,
     groupKey: ProductGroup.CONSUMABLE_STABILISED_DI_HYDROGEN_FUEL,
     key: "frigateFuel50Tonnes"
   },
@@ -349,13 +349,13 @@ Product.properties = {
   },
   gekRelic: {
     name: "Gek Relic",
-    baseValue: undefined,
+    baseValue: 23375,
     groupKey: ProductGroup.CURIOSITY_MEDIUM_VALUE_CURIOSITY,
     key: "gekRelic"
   },
   geknip: {
     name: "GekNip",
-    baseValue: undefined,
+    baseValue: 20625,
     groupKey: ProductGroup.CURIOSITY_TRADE_COMMODITY,
     key: "geknip"
   },
@@ -397,7 +397,7 @@ Product.properties = {
   },
   hermeticSeal: {
     name: "Hermetic Seal",
-    baseValue: undefined,
+    baseValue: 800,
     groupKey: ProductGroup.COMPONENT_CRAFTED_TECHNOLOGY_COMPONENT,
     key: "hermeticSeal"
   },
@@ -445,13 +445,13 @@ Product.properties = {
   },
   korvaxCasing: {
     name: "Korvax Casing",
-    baseValue: undefined,
+    baseValue: 22000,
     groupKey: ProductGroup.CURIOSITY_HIGH_VALUE_CURIOSITY,
     key: "korvaxCasing"
   },
   korvaxConvergenceCube: {
     name: "Korvax Convergence Cube",
-    baseValue: undefined,
+    baseValue: 13063,
     groupKey: ProductGroup.CURIOSITY_TRADE_COMMODITY,
     key: "korvaxConvergenceCube"
   },
@@ -562,7 +562,7 @@ Product.properties = {
   },
   navigationData: {
     name: "Navigation Data",
-    baseValue: undefined,
+    baseValue: 1000,
     groupKey: ProductGroup.CURIOSITY_ENCRYPTED_NAVIGATION_DATA,
     key: "navigationData"
   },
@@ -592,7 +592,7 @@ Product.properties = {
   },
   oxygenCapsule: {
     name: "Oxygen Capsule",
-    baseValue: undefined,
+    baseValue: 350,
     groupKey: ProductGroup.CONSUMABLE_PORTABLE_LIFE_SUPPORT_POWER,
     key: "oxygenCapsule"
   },
@@ -627,7 +627,7 @@ Product.properties = {
   },
   projectileAmmunition: {
     name: "Projectile Ammunition",
-    baseValue: undefined,
+    baseValue: 5,
     groupKey: ProductGroup.CONSUMABLE_UNIVERSAL_AMMO_MODULE,
     key: "projectileAmmunition"
   },
@@ -657,7 +657,7 @@ Product.properties = {
   },
   salvagedTechnology: {
     name: "Salvaged Technology",
-    baseValue: undefined,
+    baseValue: 50000,
     groupKey: ProductGroup.CURIOSITY_DAMAGED_DATA_UNIT,
     key: "salvagedTechnology"
   },
@@ -765,7 +765,7 @@ Product.properties = {
   },
   vykeenEffigy: {
     name: "Vy'keen Effigy",
-    baseValue: undefined,
+    baseValue: 24750,
     groupKey: ProductGroup.CURIOSITY_MEDIUM_VALUE_CURIOSITY,
     key: "vykeenEffigy"
   },
