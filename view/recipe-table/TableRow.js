@@ -6,7 +6,7 @@ import RecipeUtils from "../../artifact/RecipeUtilities.js";
 
 const TableRow = {};
 
-const round1 = x => (x ? Math.round(x * 10.0) / 10.0 : undefined);
+const round2 = x => (x ? Math.round(x * 100.0) / 100.0 : undefined);
 
 TableRow.createTableRow = recipe => {
   const { inputs, output } = recipe;
@@ -39,7 +39,7 @@ TableRow.createTableRow = recipe => {
     input3Value: inputThing3 ? inputThing3.baseValue : undefined,
     outputTotal,
     inputCost,
-    outputTotalPerCost: round1(outputTotalPerCost)
+    outputTotalPerCost: round2(outputTotalPerCost)
   };
 };
 

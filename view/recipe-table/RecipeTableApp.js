@@ -4,12 +4,17 @@ import RefinerRecipe from "../../artifact/RefinerRecipe.js";
 import RecipeTable from "./RecipeTable.js";
 import TableRow from "./TableRow.js";
 
-const crafterRows = R.map(recipe => TableRow.createTableRow(recipe), CrafterRecipe);
-const refinerRows = R.map(recipe => TableRow.createTableRow(recipe), RefinerRecipe);
-const rowData = R.concat(crafterRows, refinerRows);
+const mapFunction = recipe => TableRow.createTableRow(recipe);
+const crafterRows = R.map(mapFunction, CrafterRecipe);
+const refinerRows = R.map(mapFunction, RefinerRecipe);
+const rowData0 = R.concat(crafterRows, refinerRows);
 
-const recipeTable = React.createElement(RecipeTable, {
-  rowData
-});
+const comparator = (a, b) =>
+  a.output === b.output
+    ? R.descend(R.prop("outputTotalPerCost"))(a, b)
+    : R.ascend(R.prop("output"))(a, b);
+const rowData = R.sort(comparator, rowData0);
+
+const recipeTable = React.createElement(RecipeTable, { rowData });
 
 ReactDOM.render(recipeTable, document.getElementById("panel"));
