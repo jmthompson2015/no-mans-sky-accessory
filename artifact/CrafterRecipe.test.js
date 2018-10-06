@@ -40,10 +40,53 @@ QUnit.test("CrafterRecipe output", assert => {
   R.forEach(forEachFunction, CrafterRecipe);
 });
 
+const PRODUCT_EXCEPTIONS = [
+  // Can't make.
+  "ancientKey",
+  "defenceChit",
+  "dropPodCoordinateData",
+  "gekRelic",
+  "geknip",
+  "hexCore",
+  "korvaxCasing",
+  "korvaxConvergenceCube",
+  "larvalCore",
+  "naniteClusters",
+  "navigationData",
+  "salvagedTechnology",
+  "technologyModule",
+  "upgradeModule",
+  "vykeenDagger",
+  "vykeenEffigy",
+  "walkerBrain",
+
+  // Can't sell.
+  "atlaspassV1",
+  "atlaspassV2",
+  "atlaspassV3",
+
+  "albumenPearlOrb",
+  "echinocactus",
+  "frostwort",
+  "fungalCluster",
+  "gammaWeed",
+  "gravitinoHost",
+  "hydroponicTray",
+  "largeHydroponicTray",
+  "morditeRoot",
+  "solarVine",
+  "standingPlanter",
+  "venomUrchin",
+
+  "largeRefiner",
+  "mediumRefiner",
+  "portableRefiner"
+];
+
 QUnit.skip("CrafterRecipe exists for product", assert => {
   let errors = "";
   const forEachFunction = productKey => {
-    if (![Product.NANITE_CLUSTERS].includes(productKey)) {
+    if (!PRODUCT_EXCEPTIONS.includes(productKey)) {
       const recipes = R.filter(recipe => recipe.output.productKey === productKey, CrafterRecipe);
       assert.equal(recipes.length, 1, `Missing recipe for ${productKey}`);
       if (recipes.length !== 1) {

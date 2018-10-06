@@ -361,7 +361,7 @@ Product.properties = {
   },
   geodesite: {
     name: "Geodesite",
-    baseValue: undefined,
+    baseValue: 150000,
     groupKey: ProductGroup.TRADE_ITEM_ENRICHED_ALLOY_METAL,
     key: "geodesite"
   },
@@ -439,7 +439,7 @@ Product.properties = {
   },
   iridesite: {
     name: "Iridesite",
-    baseValue: undefined,
+    baseValue: 150000,
     groupKey: ProductGroup.TRADE_ITEM_ENRICHED_ALLOY_METAL,
     key: "iridesite"
   },
@@ -468,7 +468,7 @@ Product.properties = {
   },
   larvalCore: {
     name: "Larval Core",
-    baseValue: undefined,
+    baseValue: 61750,
     groupKey: ProductGroup.CURIOSITY_MONSTROSITY,
     key: "larvalCore"
   },
