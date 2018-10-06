@@ -16,7 +16,7 @@ RecipeUtilities.outputValue = recipe => IngredientUtils.value(recipe.output);
 
 RecipeUtilities.toString = (recipe, showName) => {
   const prefix = showName ? `${recipe.name}: ` : "";
-  return `${prefix}${IngredientUtils.toString(recipe.output)} <= ${IngredientUtils.toString(
+  return `${prefix}${IngredientUtils.toString(recipe.output)} \u2190 ${IngredientUtils.toString(
     recipe.inputs
   )}`;
 };
