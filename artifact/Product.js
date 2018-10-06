@@ -157,7 +157,7 @@ Product.properties = {
   },
   aronium: {
     name: "Aronium",
-    baseValue: undefined,
+    baseValue: 25000,
     groupKey: ProductGroup.TRADE_ITEM_ALLOY_METAL,
     key: "aronium"
   },
@@ -373,7 +373,7 @@ Product.properties = {
   },
   grantine: {
     name: "Grantine",
-    baseValue: undefined,
+    baseValue: 25000,
     groupKey: ProductGroup.TRADE_ITEM_ALLOY_METAL,
     key: "grantine"
   },
@@ -474,7 +474,7 @@ Product.properties = {
   },
   lemmium: {
     name: "Lemmium",
-    baseValue: undefined,
+    baseValue: 25000,
     groupKey: ProductGroup.TRADE_ITEM_ALLOY_METAL,
     key: "lemmium"
   },
@@ -759,7 +759,7 @@ Product.properties = {
   },
   vykeenDagger: {
     name: "Vy'keen Dagger",
-    baseValue: undefined,
+    baseValue: 11688,
     groupKey: ProductGroup.CURIOSITY_TRADE_COMMODITY,
     key: "vykeenDagger"
   },
