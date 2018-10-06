@@ -187,7 +187,7 @@ Product.properties = {
   },
   carbonCrystal: {
     name: "Carbon Crystal",
-    baseValue: undefined,
+    baseValue: 3600,
     groupKey: ProductGroup.CURIOSITY_CONCENTRATED_DEPOSIT,
     key: "carbonCrystal"
   },
@@ -247,7 +247,7 @@ Product.properties = {
   },
   destablisedSodium: {
     name: "Destablised Sodium",
-    baseValue: undefined,
+    baseValue: 12300,
     groupKey: ProductGroup.CURIOSITY_CONCENTRATED_DEPOSIT,
     key: "destablisedSodium"
   },
@@ -645,7 +645,7 @@ Product.properties = {
   },
   rareMetalElement: {
     name: "Rare Metal Element",
-    baseValue: undefined,
+    baseValue: 4200,
     groupKey: ProductGroup.CURIOSITY_CONCENTRATED_DEPOSIT,
     key: "rareMetalElement"
   },
