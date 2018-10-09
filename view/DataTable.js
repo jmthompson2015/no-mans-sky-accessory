@@ -1,5 +1,3 @@
-// import InputValidator from "../utility/InputValidator.js";
-
 // Factories.
 const Table = React.createFactory(Reactable.Table);
 const Tr = React.createFactory(Reactable.Tr);
@@ -29,9 +27,6 @@ class DataTable extends React.Component {
   }
 
   createRow0(data, key) {
-    // InputValidator.validateNotNull("data", data);
-    // InputValidator.validateNotNull("key", key);
-
     const { columns } = this.props;
     const cells = [];
     columns.forEach(column => {
@@ -59,9 +54,6 @@ class DataTable extends React.Component {
   }
 
   createRow(data, key) {
-    // InputValidator.validateNotNull("data", data);
-    // InputValidator.validateNotNull("key", key);
-
     const { columns } = this.props;
     const cells = [];
     columns.forEach(column => {
@@ -71,7 +63,6 @@ class DataTable extends React.Component {
         Td(
           {
             key: cells.length,
-            className: column.className,
             column: column.key,
             value
           },
@@ -90,8 +81,6 @@ class DataTable extends React.Component {
   }
 
   createTable(rowData) {
-    // InputValidator.validateNotNull("rowData", rowData);
-
     const { columns, showFooter } = this.props;
     const rows = [];
 
@@ -114,9 +103,6 @@ class DataTable extends React.Component {
   }
 
   determineCell(column, data, value) {
-    // InputValidator.validateNotNull("column", column);
-    // InputValidator.validateNotNull("data", data);
-
     let answer;
     const { cellFunctions } = this.props;
 
@@ -130,9 +116,6 @@ class DataTable extends React.Component {
   }
 
   determineValue(column, data) {
-    // InputValidator.validateNotNull("column", column);
-    // InputValidator.validateNotNull("data", data);
-
     let answer;
     const { valueFunctions } = this.props;
 

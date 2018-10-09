@@ -2,13 +2,22 @@ import DataTable from "../DataTable.js";
 
 import TableColumns from "./TableColumns.js";
 
+const createLink = data => {
+  const name = data.element.replace(/ /g, "_");
+  return ReactDOMFactories.a(
+    { href: `https://nomanssky.gamepedia.com/${name}`, target: "_blank" },
+    data.element
+  );
+};
+
 const valueFunctions = {};
 
 class ProductTable extends React.Component {
   render() {
     const { rowData: myRowData } = this.props;
     const cellFunctions = {
-      icon: data => ReactDOMFactories.img({ src: data.icon })
+      icon: data => ReactDOMFactories.img({ src: data.icon }),
+      element: createLink
     };
 
     const table = React.createElement(DataTable, {
