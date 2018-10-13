@@ -4,9 +4,9 @@ Provides accessory apps to support the game [No Man's Sky](https://www.nomanssky
 
 ## Accessories
 
-- [Resource Table](https://rawgit.com/jmthompson2015/no-mans-sky-accessory/master/view/resource-table/ResourceTable.html)
-- [Product Table](https://rawgit.com/jmthompson2015/no-mans-sky-accessory/master/view/product-table/ProductTable.html)
-- [Recipe Table](https://rawgit.com/jmthompson2015/no-mans-sky-accessory/master/view/recipe-table/RecipeTable.html)
+- [Resource Table](https://jmthompson2015.github.io/no-mans-sky-accessory/view/resource-table/ResourceTable.html)
+- [Product Table](https://jmthompson2015.github.io/no-mans-sky-accessory/view/product-table/ProductTable.html)
+- [Recipe Table](https://jmthompson2015.github.io/no-mans-sky-accessory/view/recipe-table/RecipeTable.html)
 
 ## License
 
