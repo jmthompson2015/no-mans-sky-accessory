@@ -7,7 +7,7 @@ QUnit.module("RefinerRecipe");
 
 QUnit.test("RefinerRecipe properties 0", assert => {
   const recipe = RefinerRecipe[0];
-  assert.equal(recipe.name, "Alchemical Construction");
+  assert.equal(recipe.name, "Chloride De-latticing");
   assert.equal(recipe.inputs.length, 1);
 });
 
@@ -58,7 +58,7 @@ QUnit.test("Multiplier refiner recipes", assert => {
   const content = R.map(mapFunction, recipes).sort();
   console.log(`Multiplier Recipes:
 ${content.join("\n")}`);
-  assert.equal(recipes.length, 24);
+  assert.equal(recipes.length, 2);
 });
 
 const RefinerRecipeTest = {};

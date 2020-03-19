@@ -35,7 +35,10 @@ QUnit.test("CrafterRecipe ingredients", assert => {
 
 QUnit.test("CrafterRecipe output", assert => {
   const forEachFunction = recipe => {
-    assert.ok(recipe.output.productKey, `Missing recipe.output.productKey for ${recipe.name}`);
+    assert.ok(
+      recipe.output.productKey,
+      `Missing recipe.output.productKey for ${recipe.name}`
+    );
   };
   R.forEach(forEachFunction, CrafterRecipe);
 });
@@ -87,7 +90,10 @@ QUnit.skip("CrafterRecipe exists for product", assert => {
   let errors = "";
   const forEachFunction = productKey => {
     if (!PRODUCT_EXCEPTIONS.includes(productKey)) {
-      const recipes = R.filter(recipe => recipe.output.productKey === productKey, CrafterRecipe);
+      const recipes = R.filter(
+        recipe => recipe.output.productKey === productKey,
+        CrafterRecipe
+      );
       assert.equal(recipes.length, 1, `Missing recipe for ${productKey}`);
       if (recipes.length !== 1) {
         errors += `Missing recipe for ${productKey}

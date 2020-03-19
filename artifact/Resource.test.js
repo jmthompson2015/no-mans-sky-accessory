@@ -18,7 +18,10 @@ QUnit.test("Resource baseValue", assert => {
       errors += `Missing baseValue for resource ${resource.name}
 `;
     }
-    assert.ok(resource.baseValue, `Missing baseValue for resource ${resource.name}`);
+    assert.ok(
+      resource.baseValue,
+      `Missing baseValue for resource ${resource.name}`
+    );
   };
   R.forEach(forEachFunction, Object.values(Resource.properties));
   console.log(errors);
@@ -53,10 +56,10 @@ QUnit.test("keys()", assert => {
 
   // Verify.
   assert.ok(result);
-  const length = 53;
+  const length = 55;
   assert.equal(result.length, length);
   assert.equal(result[0], Resource.ACTIVATED_CADMIUM);
-  assert.equal(result[length - 1], Resource.VISCOUS_FLUIDS);
+  assert.equal(result[result.length - 1], Resource.VISCOUS_FLUIDS);
 
   const properties = Object.getOwnPropertyNames(Resource);
   const count = properties.length - 1; // properties

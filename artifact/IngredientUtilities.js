@@ -5,7 +5,8 @@ const IngredientUtilities = {};
 
 IngredientUtilities.thing = ingredient =>
   ingredient
-    ? Resource.properties[ingredient.resourceKey] || Product.properties[ingredient.productKey]
+    ? Resource.properties[ingredient.resourceKey] ||
+      Product.properties[ingredient.productKey]
     : undefined;
 
 const arrayToString = array => {

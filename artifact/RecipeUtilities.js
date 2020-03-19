@@ -1,6 +1,35 @@
+import CrafterRecipe from "./CrafterRecipe.js";
 import IngredientUtils from "./IngredientUtilities.js";
+import RefinerRecipe from "./RefinerRecipe.js";
 
 const RecipeUtilities = {};
+
+RecipeUtilities.findByName = name => {
+  const filterFunction = r => r.name === name;
+  const recipes1 = R.filter(filterFunction, CrafterRecipe);
+  let answer = recipes1.length > 0 ? recipes1[0] : null;
+
+  if (!answer) {
+    const recipes2 = R.filter(filterFunction, RefinerRecipe);
+    answer = recipes2.length > 0 ? recipes2[0] : null;
+  }
+
+  return answer;
+};
+
+RecipeUtilities.findByOutput = thingKey => {
+  const filterFunction = r =>
+    r.output.productKey === thingKey || r.output.resourceKey === thingKey;
+  const recipes1 = R.filter(filterFunction, CrafterRecipe);
+  let answer = recipes1.length > 0 ? recipes1[0] : null;
+
+  if (!answer) {
+    const recipes2 = R.filter(filterFunction, RefinerRecipe);
+    answer = recipes2.length > 0 ? recipes2[0] : null;
+  }
+
+  return answer;
+};
 
 RecipeUtilities.inputValue = recipe => {
   const reduceFunction = (accum, input) => {
@@ -16,9 +45,9 @@ RecipeUtilities.outputValue = recipe => IngredientUtils.value(recipe.output);
 
 RecipeUtilities.toString = (recipe, showName) => {
   const prefix = showName ? `${recipe.name}: ` : "";
-  return `${prefix}${IngredientUtils.toString(recipe.output)} \u2190 ${IngredientUtils.toString(
-    recipe.inputs
-  )}`;
+  return `${prefix}${IngredientUtils.toString(
+    recipe.output
+  )} \u2190 ${IngredientUtils.toString(recipe.inputs)}`;
 };
 
 export default RecipeUtilities;

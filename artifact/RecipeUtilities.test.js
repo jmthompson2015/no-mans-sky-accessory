@@ -41,7 +41,8 @@ QUnit.test("best recipes report", assert => {
       R.reduce(reduceFunction2, Number.INFINITY, recipes);
 
       if (bestRecipe) {
-        const suffix = bestRecipe.device === "refiner" ? "(Refined)" : "(Crafted)";
+        const suffix =
+          bestRecipe.device === "refiner" ? "(Refined)" : "(Crafted)";
         return `${accum1}${RecipeUtilities.toString(bestRecipe)} ${suffix}
 `;
       }
@@ -64,7 +65,7 @@ QUnit.test("inputValue() 0", assert => {
   const result = RecipeUtilities.inputValue(recipe);
 
   // Verify.
-  assert.equal(result, 654);
+  assert.equal(result, 6150);
 });
 
 QUnit.test("outputValue() 0", assert => {
@@ -75,7 +76,7 @@ QUnit.test("outputValue() 0", assert => {
   const result = RecipeUtilities.outputValue(recipe);
 
   // Verify.
-  assert.equal(result, 202);
+  assert.equal(result, 90300);
 });
 
 QUnit.test("toString() 0", assert => {
@@ -87,7 +88,7 @@ QUnit.test("toString() 0", assert => {
 
   // Verify.
   assert.ok(result);
-  assert.equal(result, "Gold x1 \u2190 Hexite x1");
+  assert.equal(result, "Chlorine x150 \u2190 Chloride Lattice x1");
 });
 
 QUnit.test("toString() 0 showName", assert => {
@@ -100,7 +101,10 @@ QUnit.test("toString() 0 showName", assert => {
 
   // Verify.
   assert.ok(result);
-  assert.equal(result, "Alchemical Construction: Gold x1 \u2190 Hexite x1");
+  assert.equal(
+    result,
+    "Chloride De-latticing: Chlorine x150 \u2190 Chloride Lattice x1"
+  );
 });
 
 const RecipeUtilitiesTest = {};

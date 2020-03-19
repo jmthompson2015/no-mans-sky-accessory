@@ -37,10 +37,16 @@ const VALUE_EXCEPTIONS = [
 QUnit.skip("Product baseValue", assert => {
   let errors = "";
   const forEachFunction = product => {
-    if (product.baseValue === undefined && !VALUE_EXCEPTIONS.includes(product.name)) {
+    if (
+      product.baseValue === undefined &&
+      !VALUE_EXCEPTIONS.includes(product.name)
+    ) {
       errors += `Missing baseValue for product ${product.name}
 `;
-      assert.ok(product.baseValue, `Missing baseValue for product ${product.name}`);
+      assert.ok(
+        product.baseValue,
+        `Missing baseValue for product ${product.name}`
+      );
     }
   };
   R.forEach(forEachFunction, Object.values(Product.properties));
@@ -76,10 +82,10 @@ QUnit.test("keys()", assert => {
 
   // Verify.
   assert.ok(result);
-  const length = 111;
+  const length = 441;
   assert.equal(result.length, length);
-  assert.equal(result[0], Product.ACID);
-  assert.equal(result[length - 1], Product.WARP_CELL);
+  assert.equal(result[0], Product.ABYSSAL_STEW);
+  assert.equal(result[result.length - 1], Product.WRITHING_ROILING_BATTER);
 
   const properties = Object.getOwnPropertyNames(Product);
   const count = properties.length - 1; // properties

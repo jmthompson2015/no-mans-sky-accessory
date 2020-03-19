@@ -7,11 +7,14 @@ QUnit.module("IngredientUtilities");
 
 QUnit.test("thing()", assert => {
   assert.equal(
-    IngredientUtilities.thing(Ingredient.create({ productKey: Product.GLASS })).name,
+    IngredientUtilities.thing(Ingredient.create({ productKey: Product.GLASS }))
+      .name,
     "Glass"
   );
   assert.equal(
-    IngredientUtilities.thing(Ingredient.create({ resourceKey: Resource.CARBON })).name,
+    IngredientUtilities.thing(
+      Ingredient.create({ resourceKey: Resource.CARBON })
+    ).name,
     "Carbon"
   );
   assert.equal(IngredientUtilities.thing(undefined), undefined);
@@ -19,7 +22,10 @@ QUnit.test("thing()", assert => {
 
 QUnit.test("toString() ingredient", assert => {
   // Setup.
-  const ingredient = Ingredient.create({ resourceKey: Resource.CARBON, amount: 5 });
+  const ingredient = Ingredient.create({
+    resourceKey: Resource.CARBON,
+    amount: 5
+  });
 
   // Run.
   const result = IngredientUtilities.toString(ingredient);
@@ -46,24 +52,16 @@ QUnit.test("toString() ingredients", assert => {
 
 QUnit.test("value() Carbon", assert => {
   // Setup.
-  const ingredient = Ingredient.create({ resourceKey: Resource.CARBON, amount: 5 });
+  const ingredient = Ingredient.create({
+    resourceKey: Resource.CARBON,
+    amount: 5
+  });
 
   // Run.
   const result = IngredientUtilities.value(ingredient);
 
   // Verify.
-  assert.equal(result, 35);
-});
-
-QUnit.test("value() Large Refiner", assert => {
-  // Setup.
-  const ingredient = Ingredient.create({ productKey: Product.LARGE_REFINER });
-
-  // Run.
-  const result = IngredientUtilities.value(ingredient);
-
-  // Verify.
-  assert.equal(result, undefined);
+  assert.equal(result, 60);
 });
 
 const IngredientUtilitiesTest = {};
