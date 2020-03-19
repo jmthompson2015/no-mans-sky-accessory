@@ -5,6 +5,7 @@ const R = require("ramda");
 
 const EnumGenerator = require("./EnumGenerator.js");
 const FileLoader = require("./FileLoader.js");
+const StringUtilities = require("../../lib/string-utilities.js");
 
 const ProductConverter = {};
 
@@ -13,8 +14,6 @@ const OUTPUT_FILE = "../Product.js";
 const HEADER = `// GENERATED FILE: Do not edit.
 
 // see https://nomanssky.gamepedia.com/Product
-
-import ProductGroup from "./ProductGroup.js";
 
 const Product = {
 `;
@@ -29,7 +28,7 @@ Object.freeze(Product);
 export default Product;
 `;
 
-const ADD_PRODUCTS = ["Large Refiner", "Medium Refiner", "Nanite Clusters", "Portable Refiner"];
+const ADD_PRODUCTS = ["Nanite Clusters"];
 
 const BASE_VALUES = {
   acid: 188000,
@@ -41,25 +40,31 @@ const BASE_VALUES = {
   carbonNanotubes: 500,
   circuitBoard: 916250,
   chlorideLattice: 6150,
+  cobaltMirror: 20500,
+  creaturePellets: 20,
+  cryoPump: 1500000,
+  cryogenicChamber: 3800000,
   destablisedSodium: 12300,
   diHydrogenJelly: 200,
   dirtyBronze: 25000,
+  enrichedCarbon: 50000,
+  explosiveDrones: 75000,
   frigateFuel100Tonnes: 40000,
   frigateFuel200Tonnes: 80000,
   frigateFuel50Tonnes: 20000,
-  gekRelic: 23375,
-  geknip: 20625,
+  fuelOxidiser: 75000,
+  fusionAccelerant: 1500000,
+  fusionIgnitor: 15600000,
   geodesite: 150000,
-  glass: 13000,
+  glass: 200,
   grantine: 25000,
   heatCapacitor: 180000,
   hermeticSeal: 800,
   herox: 25000,
+  holographicAnalyser: 75000,
+  hotIce: 320000,
   ionBattery: 200,
   iridesite: 150000,
-  korvaxCasing: 22000,
-  korvaxConvergenceCube: 13063,
-  larvalCore: 61750,
   lemmium: 25000,
   lifeSupportGel: 200,
   liquidExplosive: 800500,
@@ -68,18 +73,30 @@ const BASE_VALUES = {
   magnoGold: 25000,
   metalPlating: 800,
   microprocessor: 2000,
-  navigationData: 1000,
+  mindControlDevice: 75000,
+  mineralCompressor: 75000,
+  nitrogenSalt: 50000,
+  organicCatalyst: 320000,
   oxygenCapsule: 350,
   polyFibre: 130000,
-  projectileAmmunition: 5,
+  portableReactor: 4200000,
+  projectileAmmunition: 1,
+  quantumProcessor: 5200000,
   rareMetalElement: 4200,
-  salvagedTechnology: 50000,
+  saltRefractor: 30500,
+  semiconductor: 400000,
+  sodiumDiode: 3500,
   starshipLaunchFuel: 450,
+  stasisDevice: 15600000,
+  superconductor: 2000000,
+  superoxideCrystal: 5100,
   tetracobalt: 6150,
+  thermicCondensate: 50000,
   unstableGel: 50000,
-  vykeenDagger: 11688,
-  vykeenEffigy: 24750,
-  warpCell: 46750
+  unstablePlasma: 5750,
+  warpCell: 46750,
+  warpHypercore: 46750,
+  wiringLoom: 25000
 };
 
 const writeFile = (outputFile, content) => {
@@ -95,18 +112,15 @@ const writeFile = (outputFile, content) => {
 };
 
 const extractLinkName = anchorRow => {
-  const index1 = anchorRow.indexOf("</a>");
-  const index0 = anchorRow.lastIndexOf(">", index1);
+  const anchor = StringUtilities.Extractor.between(
+    anchorRow,
+    "<a",
+    "</a>",
+    false,
+    true
+  );
 
-  return anchorRow.substring(index0 + 1, index1);
-};
-
-const extractSpanContent = row => {
-  const index00 = row.indexOf("<span");
-  const index0 = row.indexOf(">", index00);
-  const index1 = row.indexOf("</span>", index0);
-
-  return row.substring(index0 + 1, index1);
+  return StringUtilities.XMLExtractor.tagAttribute(anchor, "a", "title");
 };
 
 const createProductEnum = dataRow => {
@@ -129,7 +143,7 @@ const createProductEnum = dataRow => {
   return "";
 };
 
-const createProductString = (dataRow, group) => {
+const createProductString = dataRow => {
   if (dataRow !== undefined) {
     const row = dataRow.trim();
 
@@ -137,11 +151,16 @@ const createProductString = (dataRow, group) => {
       const name = extractLinkName(row);
       const enumValue = EnumGenerator.createEnumValue(name);
       const baseValue = BASE_VALUES[enumValue];
+      const image = StringUtilities.XMLExtractor.tagAttribute(
+        dataRow,
+        "img",
+        "src"
+      );
 
       return `  ${enumValue}: {
     name: "${name}",
     baseValue: ${baseValue},
-    groupKey: ${group},
+    image: "${image}",
     key: "${enumValue}"
   },
 `;
@@ -157,36 +176,35 @@ ProductConverter.convert = () => {
       throw new Error(`Failed to load inputFile: ${INPUT_FILE}`);
     }
 
-    const key0 = '<h3><span class="mw-headline"';
-    const key1 = "</ul>";
-    const dataSections = [];
-    let index0 = data.indexOf(key0);
-    while (index0 >= 0) {
-      const index1 = data.indexOf(key1, index0);
-      dataSections.push(data.substring(index0, index1));
-      index0 = data.indexOf(key0, index1);
-    }
+    const data2 = StringUtilities.Extractor.after(
+      data,
+      '<span class="mw-headline" id="Types_of_products">Types of products</span>'
+    );
+    const data3 = StringUtilities.Extractor.before(
+      data2,
+      '<span class="mw-headline" id="Crafting_Tree">Crafting Tree</span>'
+    );
+    const dataSections = StringUtilities.Extractor.list(
+      data3,
+      "<li",
+      "</li>",
+      true
+    );
 
     let array1 = [];
     let array2 = [];
-    const key2 = "<ul>";
 
     dataSections.forEach(section => {
-      const group0 = extractSpanContent(section);
-      const groupName = group0.replace(" - ", " ");
-      const groupEnumName = EnumGenerator.createEnumName(groupName);
-      const group = `ProductGroup.${groupEnumName}`;
-      const mySection0 = section.substring(section.indexOf(key2) + key2.length);
-      const mySection = mySection0.replace(/\n/g, "");
-      const dataRows = mySection.split("</li>");
-
-      const reduceFunction1 = (accum, row) => R.append(createProductEnum(row), accum);
-      const array11 = R.reduce(reduceFunction1, [], dataRows);
-      array1 = R.concat(array1, array11.filter(element => element !== ""));
-
-      const reduceFunction2 = (accum, row) => R.append(createProductString(row, group), accum);
-      const array22 = R.reduce(reduceFunction2, [], dataRows);
-      array2 = R.concat(array22, array2);
+      const mySection0 = section.replace(/\n/g, "");
+      const mySection1 = mySection0.replace(/,/g, " ");
+      const mySection2 = StringUtilities.Replacer.replaceAll(
+        mySection1,
+        "&#39;",
+        "'"
+      );
+      const mySection = mySection2.replace(/\s+/g, " ");
+      array1 = R.append(createProductEnum(mySection), array1);
+      array2 = R.append(createProductString(mySection), array2);
     });
 
     ADD_PRODUCTS.forEach(name => {
@@ -195,13 +213,13 @@ ProductConverter.convert = () => {
       const baseValue = BASE_VALUES[enumValue];
 
       array1.push(`  ${enumName}: "${enumValue}",
-`);
+    `);
       array2.push(`  ${enumValue}: {
-    name: "${name}",
-    baseValue: ${baseValue},
-    key: "${enumValue}"
-  },
-`);
+        name: "${name}",
+        baseValue: ${baseValue},
+        key: "${enumValue}"
+      },
+    `);
     });
 
     array1.sort();
