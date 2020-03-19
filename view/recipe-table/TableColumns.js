@@ -35,11 +35,6 @@ const TableColumns = [
     className: "tr"
   },
   {
-    key: "input1Value",
-    label: "Base Value",
-    className: "tr"
-  },
-  {
     key: "input2",
     label: "Ingredient 2",
     className: "tl"
@@ -50,11 +45,6 @@ const TableColumns = [
     className: "tr"
   },
   {
-    key: "input2Value",
-    label: "Base Value",
-    className: "tr"
-  },
-  {
     key: "input3",
     label: "Ingredient 3",
     className: "tl"
@@ -62,11 +52,6 @@ const TableColumns = [
   {
     key: "input3Amount",
     label: "Amount",
-    className: "tr"
-  },
-  {
-    key: "input3Value",
-    label: "Base Value",
     className: "tr"
   },
   {

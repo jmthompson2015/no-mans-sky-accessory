@@ -20,7 +20,8 @@ TableRow.createTableRow = recipe => {
 
   const inputCost = RecipeUtils.inputValue(recipe);
   const outputTotal = RecipeUtils.outputValue(recipe);
-  const outputTotalPerCost = outputTotal && inputCost ? outputTotal / inputCost : undefined;
+  const outputTotalPerCost =
+    outputTotal && inputCost ? outputTotal / inputCost : undefined;
 
   return {
     output: outputThing.name,
