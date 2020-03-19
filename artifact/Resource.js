@@ -2,9 +2,6 @@
 
 // see https://nomanssky.gamepedia.com/Resource
 
-import ResourceGroup from "./ResourceGroup.js";
-import ResourceRarity from "./ResourceRarity.js";
-
 const Resource = {
   ACTIVATED_CADMIUM: "activatedCadmium",
   ACTIVATED_COPPER: "activatedCopper",
@@ -19,11 +16,12 @@ const Resource = {
   COBALT: "cobalt",
   CONDENSED_CARBON: "condensedCarbon",
   COPPER: "copper",
-  COPRITE: "coprite",
+  CYTO_PHOSPHATE: "cytoPhosphate",
   DEUTERIUM: "deuterium",
   DIOXITE: "dioxite",
   DI_HYDROGEN: "diHydrogen",
   EMERIL: "emeril",
+  FAECIUM: "faecium",
   FERRITE_DUST: "ferriteDust",
   FROST_CRYSTAL: "frostCrystal",
   FUNGAL_MOULD: "fungalMould",
@@ -50,6 +48,7 @@ const Resource = {
   RUNAWAY_MOULD: "runawayMould",
   RUSTED_METAL: "rustedMetal",
   SALT: "salt",
+  SILICATE_POWDER: "silicatePowder",
   SILVER: "silver",
   SODIUM: "sodium",
   SODIUM_NITRATE: "sodiumNitrate",
@@ -64,426 +63,332 @@ const Resource = {
 Resource.properties = {
    activatedCadmium: {
      name: "Activated Cadmium",
-     groupKey: ResourceGroup.STELLAR,
-     rarityKey: ResourceRarity.RARE,
      baseValue: 450.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/8/88/SUBSTANCE.EXRED.2.png/50px-SUBSTANCE.EXRED.2.png?version=d002b7cb0829baacfb754b916e8642c4",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/8/88/SUBSTANCE.EXRED.2.png/50px-SUBSTANCE.EXRED.2.png?version=556b9e4478ec71e09713c2adc350763c",
      key: "activatedCadmium"
    },
    activatedCopper: {
      name: "Activated Copper",
-     groupKey: ResourceGroup.STELLAR,
-     rarityKey: ResourceRarity.RARE,
      baseValue: 245.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/9/94/SUBSTANCE.EXYELLOW.2.png/50px-SUBSTANCE.EXYELLOW.2.png?version=532d08dac7f2c6eafaa731d867fe99f6",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/9/94/SUBSTANCE.EXYELLOW.2.png/50px-SUBSTANCE.EXYELLOW.2.png?version=fda04b6da7e7ed6d8dacce5e1b077975",
      key: "activatedCopper"
    },
    activatedEmeril: {
      name: "Activated Emeril",
-     groupKey: ResourceGroup.STELLAR,
-     rarityKey: ResourceRarity.RARE,
      baseValue: 696.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/b/bb/SUBSTANCE.EXGREEN.2.png/50px-SUBSTANCE.EXGREEN.2.png?version=ab5e73336337d7cd8e2794453d6f34a4",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/b/bb/SUBSTANCE.EXGREEN.2.png/50px-SUBSTANCE.EXGREEN.2.png?version=8162a25f1e0b750e7b17c81bc59cce8c",
      key: "activatedEmeril"
    },
    activatedIndium: {
      name: "Activated Indium",
-     groupKey: ResourceGroup.STELLAR,
-     rarityKey: ResourceRarity.RARE,
      baseValue: 949.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/4/44/SUBSTANCE.EXBLUE.2.png/50px-SUBSTANCE.EXBLUE.2.png?version=7acefa16036b785632eb93679ff7aea8",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/4/44/SUBSTANCE.EXBLUE.2.png/50px-SUBSTANCE.EXBLUE.2.png?version=6f1e97b92d33f3e7d935835779f62261",
      key: "activatedIndium"
    },
    ammonia: {
      name: "Ammonia",
-     groupKey: ResourceGroup.LOCALISED,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 62.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/1/1b/Ammonia.png/50px-Ammonia.png?version=176c36f13961cef67281afe57ec7983e",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/6/67/SUBSTANCE.BIOME.TOXIC.png/50px-SUBSTANCE.BIOME.TOXIC.png?version=163578eca41a4f002e5d0828ed96dd7a",
      key: "ammonia"
    },
    cactusFlesh: {
      name: "Cactus Flesh",
-     groupKey: ResourceGroup.AGRICULTURAL,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 28.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/9/9a/Substance.neutral.rare4.png/50px-Substance.neutral.rare4.png?version=becb972738abad784a7a0c9d525e2752",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/7/7f/SUBSTANCE.PLANT.DUSTY.png/50px-SUBSTANCE.PLANT.DUSTY.png?version=14b30940230a1b47be6a28046964b6bb",
      key: "cactusFlesh"
    },
    cadmium: {
      name: "Cadmium",
-     groupKey: ResourceGroup.STELLAR,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 234.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/6/6d/Substance.Cadmium.png/50px-Substance.Cadmium.png?version=4e2c99fc42a8d3d483ffa7941875559a",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/d/dd/SUBSTANCE.RED.2.png/50px-SUBSTANCE.RED.2.png?version=dd6d6cd881723438335582c7bacdde5c",
      key: "cadmium"
    },
    carbon: {
      name: "Carbon",
-     groupKey: ResourceGroup.ORGANIC,
-     rarityKey: ResourceRarity.COMMON,
-     baseValue: 7.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/0/07/Substance.fuel.common1.png/50px-Substance.fuel.common1.png?version=ea77b6fb006940b89523736c37b46fdb",
+     baseValue: 12.0,
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/5/5b/SUBSTANCE.FUEL.1.png/50px-SUBSTANCE.FUEL.1.png?version=246f7c6a05b322916e0894e66b24f022",
      key: "carbon"
    },
    chlorine: {
      name: "Chlorine",
-     groupKey: ResourceGroup.AQUATIC,
-     rarityKey: ResourceRarity.RARE,
      baseValue: 602.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/a/ae/Substances.Chlorine.png/50px-Substances.Chlorine.png?version=f76859dcbaf2313a60a8c8e380804852",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/2/25/SUBSTANCE.WATER.2.png/50px-SUBSTANCE.WATER.2.png?version=cf7430e6d13fa3a4143b219f252cb20f",
      key: "chlorine"
    },
    chromaticMetal: {
      name: "Chromatic Metal",
-     groupKey: ResourceGroup.STELLAR,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 245.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/2/2b/SUBSTANCE.STELLAR.2.png/50px-SUBSTANCE.STELLAR.2.png?version=3e802448463ba309930f9c4a04b20b35",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/2/2b/SUBSTANCE.STELLAR.2.png/50px-SUBSTANCE.STELLAR.2.png?version=620e50ccf023cc30cc2b5543d008f14d",
      key: "chromaticMetal"
    },
    cobalt: {
      name: "Cobalt",
-     groupKey: ResourceGroup.SUBTERRANEAN,
-     rarityKey: ResourceRarity.COMMON,
      baseValue: 198.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/9/99/Substance.Cobalt.png/50px-Substance.Cobalt.png?version=643baa4cb02162cdb48f1a965b5f0a4a",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/5/5a/SUBSTANCE.CAVE.1.png/50px-SUBSTANCE.CAVE.1.png?version=9830485e96ad82ad7a390fac2ae8d9cd",
      key: "cobalt"
    },
    condensedCarbon: {
      name: "Condensed Carbon",
-     groupKey: ResourceGroup.ORGANIC,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 24.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/0/0c/Substance.fuel.uncommon1.png/50px-Substance.fuel.uncommon1.png?version=267e98e1c822ea96e4d2336d30cecd27",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/a/a5/SUBSTANCE.FUEL.2.png/50px-SUBSTANCE.FUEL.2.png?version=d47bee5af647317a3b8f3647236c13f4",
      key: "condensedCarbon"
    },
    copper: {
      name: "Copper",
-     groupKey: ResourceGroup.STELLAR,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 110.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/7/7a/Substance.neutral.common1.png/50px-Substance.neutral.common1.png?version=fbd2e9c871ea4f59bcdeac378014460d",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/c/c1/SUBSTANCE.YELLOW.2.png/50px-SUBSTANCE.YELLOW.2.png?version=1c07a66383f10a71b587f2a1eebecd82",
      key: "copper"
    },
-   coprite: {
-     name: "Coprite",
-     groupKey: ResourceGroup.AGRICULTURAL,
-     rarityKey: ResourceRarity.UNCOMMON,
-     baseValue: 30.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/8/80/Substance.neutral.rare14.png/50px-Substance.neutral.rare14.png?version=39bd5c386b0c20960240393928ce4d4e",
-     key: "coprite"
+   cytoPhosphate: {
+     name: "Cyto-Phosphate",
+     baseValue: 201.0,
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/f/f2/SUBSTANCE.WATER.PLANT.png/50px-SUBSTANCE.WATER.PLANT.png?version=cbdad7d20c9d3547d115e0fa6e9b4e19",
+     key: "cytoPhosphate"
    },
    deuterium: {
      name: "Deuterium",
-     groupKey: ResourceGroup.HIGH_ENERGY,
-     rarityKey: ResourceRarity.RARE,
      baseValue: 34.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/8/84/Substance.Deuterium.png/50px-Substance.Deuterium.png?version=a042ad801c5671400e371cba15ef21ed",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/5/50/SUBSTANCE.LAUNCHSUB.2.png/50px-SUBSTANCE.LAUNCHSUB.2.png?version=d7d596a47e55184b74f632817c65c6d4",
      key: "deuterium"
    },
    diHydrogen: {
      name: "Di-hydrogen",
-     groupKey: ResourceGroup.HIGH_ENERGY,
-     rarityKey: ResourceRarity.COMMON,
      baseValue: 34.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/0/03/SUBSTANCE.LAUNCHSUB.1.png/50px-SUBSTANCE.LAUNCHSUB.1.png?version=df47125afcf8d3b1d47d6cdd1e78ff69",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/0/03/SUBSTANCE.LAUNCHSUB.1.png/50px-SUBSTANCE.LAUNCHSUB.1.png?version=3e344391913ab8a49cab39dfd45668a8",
      key: "diHydrogen"
    },
    dioxite: {
      name: "Dioxite",
-     groupKey: ResourceGroup.LOCALISED,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 62.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/3/3c/Substance.Dioxite.png/50px-Substance.Dioxite.png?version=eae041be6a5a6b57d08860e4f74eeb39",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/d/df/SUBSTANCE.BIOME.COLD.png/50px-SUBSTANCE.BIOME.COLD.png?version=77412a0189080e6fdc7e21fe5d269e4f",
      key: "dioxite"
    },
    emeril: {
      name: "Emeril",
-     groupKey: ResourceGroup.STELLAR,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 275.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/7/77/Substance.neutral.rare1.png/50px-Substance.neutral.rare1.png?version=d58759d63077036593e016c57300f95e",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/f/f9/SUBSTANCE.GREEN.2.png/50px-SUBSTANCE.GREEN.2.png?version=c5892edb2958e42e13d0878d5041f083",
      key: "emeril"
+   },
+   faecium: {
+     name: "Faecium",
+     baseValue: 30.0,
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/c/cf/SUBSTANCE.PLANT.POOP.png/50px-SUBSTANCE.PLANT.POOP.png?version=c7bfef15b7457f0dbc3f769f85fa588d",
+     key: "faecium"
    },
    ferriteDust: {
      name: "Ferrite Dust",
-     groupKey: ResourceGroup.METALLIC,
-     rarityKey: ResourceRarity.COMMON,
      baseValue: 14.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/2/2c/Substance.neutral.common2.png/50px-Substance.neutral.common2.png?version=8d8190a81de3e5900126ca1e80898965",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/7/7a/SUBSTANCE.LAND.1.png/50px-SUBSTANCE.LAND.1.png?version=61dd921559b9cc62c762ea84d2cb512b",
      key: "ferriteDust"
    },
    frostCrystal: {
      name: "Frost Crystal",
-     groupKey: ResourceGroup.AGRICULTURAL,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 12.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/8/8f/Substance.neutral.rare13.png/50px-Substance.neutral.rare13.png?version=2e9f13cec7f3ced4ce7b0e5e88c38704",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/7/7d/SUBSTANCE.PLANT.SNOW.png/50px-SUBSTANCE.PLANT.SNOW.png?version=defc2798ab57c6558e36fb9b8bb9f356",
      key: "frostCrystal"
    },
    fungalMould: {
      name: "Fungal Mould",
-     groupKey: ResourceGroup.AGRICULTURAL,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 16.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/9/9c/Substance.neutral.rare11.png/50px-Substance.neutral.rare11.png?version=ef0c5737ed10d8ef91714311878ceba2",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/c/c6/SUBSTANCE.PLANT.TOXIC.png/50px-SUBSTANCE.PLANT.TOXIC.png?version=3b60b82d7a13ca7256f18da506fa6957",
      key: "fungalMould"
    },
    gammaRoot: {
      name: "Gamma Root",
-     groupKey: ResourceGroup.AGRICULTURAL,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 16.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/2/2e/Substance.neutral.rare8.png/50px-Substance.neutral.rare8.png?version=fb0bbb9cfa77c24b9d46ee07ee2ee71d",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/7/7e/SUBSTANCE.PLANT.RADIO.png/50px-SUBSTANCE.PLANT.RADIO.png?version=6c7f9f75ad469a32c7179ad93943d411",
      key: "gammaRoot"
    },
    gold: {
      name: "Gold",
-     groupKey: ResourceGroup.ASTEROID,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 202.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/f/f4/Substance.neutral.uncommon2.png/50px-Substance.neutral.uncommon2.png?version=2aa502180126f4faae0f250a9efdde2f",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/f/f6/SUBSTANCE.ASTEROID.2.png/50px-SUBSTANCE.ASTEROID.2.png?version=0ce89d5683d200f847702ec77f15d6d4",
      key: "gold"
    },
    hexite: {
      name: "Hexite",
-     groupKey: ResourceGroup.ORGANIC,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 654.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/d/d8/PRODUCT.HEXCORE.png/50px-PRODUCT.HEXCORE.png?version=83d96e94e9d1afb21e4fd75664231dfe",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/d/d8/PRODUCT.HEXCORE.png/50px-PRODUCT.HEXCORE.png?version=943a20876a9846629926f167ddef9825",
      key: "hexite"
    },
    indium: {
      name: "Indium",
-     groupKey: ResourceGroup.STELLAR,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 464.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/e/eb/Substance.Indium.png/50px-Substance.Indium.png?version=6aead9581e64e4685df8a332651fba05",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/d/db/SUBSTANCE.BLUE.2.png/50px-SUBSTANCE.BLUE.2.png?version=1d9a3373287eea84f1495e8651fe7052",
      key: "indium"
    },
    ionisedCobalt: {
      name: "Ionised Cobalt",
-     groupKey: ResourceGroup.SUBTERRANEAN,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 401.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/1/1d/Substance.IonisedCobalt.png/50px-Substance.IonisedCobalt.png?version=158c24fb3b09980b11786ceb7e83a5b0",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/e/e3/SUBSTANCE.CAVE.2.png/50px-SUBSTANCE.CAVE.2.png?version=cc70ac69083430fe52094821ae5e27db",
      key: "ionisedCobalt"
    },
    kelpSac: {
      name: "Kelp Sac",
-     groupKey: ResourceGroup.AGRICULTURAL,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 41.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/8/80/Substance.neutral.rare9.png/50px-Substance.neutral.rare9.png?version=fc725a5a805432646fd75446e639eec8",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/8/87/SUBSTANCE.PLANT.WATER.png/50px-SUBSTANCE.PLANT.WATER.png?version=bfa02359fd424d9e970fefbeff3ca81d",
      key: "kelpSac"
    },
    livingSlime: {
      name: "Living Slime",
-     groupKey: ResourceGroup.JUNK,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 20.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/3/38/NmsLiving_Slime_Icon.png/50px-NmsLiving_Slime_Icon.png?version=22478240056739218ee427df844dfa45",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/9/93/SPACEGUNK.4.png/50px-SPACEGUNK.4.png?version=d41e39db7d33549d2f480b79ce552ea8",
      key: "livingSlime"
    },
    magnetisedFerrite: {
      name: "Magnetised Ferrite",
-     groupKey: ResourceGroup.METALLIC,
-     rarityKey: ResourceRarity.RARE,
      baseValue: 82.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/d/d7/SUBSTANCE.LAND.3.png/50px-SUBSTANCE.LAND.3.png?version=9638643ec1551e6192c486330270768c",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/d/d7/SUBSTANCE.LAND.3.png/50px-SUBSTANCE.LAND.3.png?version=9047c7aed7ee4ca5ba422681bfabd9c2",
      key: "magnetisedFerrite"
    },
    marrowBulb: {
      name: "Marrow Bulb",
-     groupKey: ResourceGroup.AGRICULTURAL,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 41.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/0/0f/Substance.neutral.rare3.png/50px-Substance.neutral.rare3.png?version=6735774d23cb259f60bf26dc6bb016b3",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/8/8e/SUBSTANCE.PLANT.CAVE.png/50px-SUBSTANCE.PLANT.CAVE.png?version=b6ff21353b3ff4bb04b6fb08d22b953d",
      key: "marrowBulb"
    },
    mordite: {
      name: "Mordite",
-     groupKey: ResourceGroup.HARVESTED,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 40.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/8/87/Substance.neutral.rare15.png/50px-Substance.neutral.rare15.png?version=928892f62a4daa02c1a45e7ededbe97a",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/7/7e/SUBSTANCE.CREATURE.1.png/50px-SUBSTANCE.CREATURE.1.png?version=1343683f37afe2565a4cbd044fa0542d",
      key: "mordite"
    },
    nitrogen: {
      name: "Nitrogen",
-     groupKey: ResourceGroup.GAS,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 20.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/c/c7/Substance.Nitrogen.png/50px-Substance.Nitrogen.png?version=9baf491e0f8214be8fa45fc6f35ae83a",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/7/77/GAS.1.png/50px-GAS.1.png?version=8e53a90242714d4f6e63cceb3fd466c8",
      key: "nitrogen"
    },
    oxygen: {
      name: "Oxygen",
-     groupKey: ResourceGroup.ORGANIC,
-     rarityKey: ResourceRarity.COMMON,
      baseValue: 34.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/5/5f/Substance.Oxygen.png/50px-Substance.Oxygen.png?version=1701d8d0b75c58d3341013ed6855e2c4",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/e/ec/SUBSTANCE.AIR.1.png/50px-SUBSTANCE.AIR.1.png?version=b5b5531f1ffd5111845146092e3941eb",
      key: "oxygen"
    },
    paraffinium: {
      name: "Paraffinium",
-     groupKey: ResourceGroup.LOCALISED,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 62.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/6/69/Substance.Paraffinium.png/50px-Substance.Paraffinium.png?version=971d11aec07c839afbb1f3e5e35fc6e4",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/7/7f/SUBSTANCE.BIOME.LUSH.png/50px-SUBSTANCE.BIOME.LUSH.png?version=8ece91748ea0fe127e972e26fae7bd6d",
      key: "paraffinium"
    },
    phosphorus: {
      name: "Phosphorus",
-     groupKey: ResourceGroup.LOCALISED,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 62.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/a/af/Substance.Phosphorus.png/50px-Substance.Phosphorus.png?version=56f2d8105e66aa686c7a599d7a225121",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/7/7c/SUBSTANCE.BIOME.HOT.png/50px-SUBSTANCE.BIOME.HOT.png?version=5861c71e2dbb9a7d7adda9a73a2d5a0e",
      key: "phosphorus"
    },
    platinum: {
      name: "Platinum",
-     groupKey: ResourceGroup.ASTEROID,
-     rarityKey: ResourceRarity.RARE,
      baseValue: 303.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/1/17/Substance.tech.uncommon1.png/50px-Substance.tech.uncommon1.png?version=c95bfbe5e349e3e9442647770e4217bb",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/7/7d/SUBSTANCE.ASTEROID.3.png/50px-SUBSTANCE.ASTEROID.3.png?version=89d9f14e211d2b2f24ad49b9b78d4387",
      key: "platinum"
    },
    pugneum: {
      name: "Pugneum",
-     groupKey: ResourceGroup.ANOMALOUS,
-     rarityKey: ResourceRarity.RARE,
      baseValue: 138.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/4/47/Substance.neutral.rare5.png/50px-Substance.neutral.rare5.png?version=a85696e8a5cf42b4f9561896db3a659f",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/9/94/SUBSTANCE.ROBOT.1.png/50px-SUBSTANCE.ROBOT.1.png?version=7e4545fc4b2dc9bfbaf351631bd58b19",
      key: "pugneum"
    },
    pureFerrite: {
      name: "Pure Ferrite",
-     groupKey: ResourceGroup.METALLIC,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 28.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/7/7b/SUBSTANCE.LAND.2.png/50px-SUBSTANCE.LAND.2.png?version=9c9f62da654bcdcff4c66be444699402",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/7/7b/SUBSTANCE.LAND.2.png/50px-SUBSTANCE.LAND.2.png?version=69e6a510bbfa323de3fbb6c554eb2418",
      key: "pureFerrite"
    },
    pyrite: {
      name: "Pyrite",
-     groupKey: ResourceGroup.LOCALISED,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 62.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/7/7f/SUBSTANCE.BIOME.DUSTY.png/50px-SUBSTANCE.BIOME.DUSTY.png?version=e95448e9e2aae46dd8bddfd2ca37c589",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/7/7f/SUBSTANCE.BIOME.DUSTY.png/50px-SUBSTANCE.BIOME.DUSTY.png?version=80c342ba082b8fe34814c60f92887602",
      key: "pyrite"
    },
    radon: {
      name: "Radon",
-     groupKey: ResourceGroup.GAS,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 20.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/0/0d/GAS.2.png/50px-GAS.2.png?version=4342cdcaf0250258d4d3871939aa9a0e",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/0/0d/GAS.2.png/50px-GAS.2.png?version=557a2a33717ffde9bda58bd10a43cab8",
      key: "radon"
    },
    residualGoop: {
      name: "Residual Goop",
-     groupKey: ResourceGroup.JUNK,
-     rarityKey: ResourceRarity.COMMON,
      baseValue: 20.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/3/37/Residualgoopicon.png/50px-Residualgoopicon.png?version=2e9d34863a2a5fa76635b29c82bbc4fc",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/1/1f/SPACEGUNK.1.png/50px-SPACEGUNK.1.png?version=a49b0339196eab264e0442768c8af87d",
      key: "residualGoop"
    },
    runawayMould: {
      name: "Runaway Mould",
-     groupKey: ResourceGroup.JUNK,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 20.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/e/e6/Runawaymould.PNG/50px-Runawaymould.PNG?version=6decf6ebcf47d56e1f1b7636fbf82b36",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/6/6c/SPACEGUNK.2.png/50px-SPACEGUNK.2.png?version=7a2b813e506fcc85ad3c995dde2b61c0",
      key: "runawayMould"
    },
    rustedMetal: {
      name: "Rusted Metal",
-     groupKey: ResourceGroup.JUNK,
-     rarityKey: ResourceRarity.COMMON,
      baseValue: 20.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/b/b2/Rustedmetalicon.png/50px-Rustedmetalicon.png?version=0bd37343861a504723d07015f310f152",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/0/0b/SPACEGUNK.3.png/50px-SPACEGUNK.3.png?version=463016f37a14bd13cffe1cd16fda18b3",
      key: "rustedMetal"
    },
    salt: {
      name: "Salt",
-     groupKey: ResourceGroup.AQUATIC,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 299.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/6/61/Substance.Salt.png/50px-Substance.Salt.png?version=0eb589c05b13e4b3cb6ce41f50ad5395",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/9/9f/SUBSTANCE.WATER.1.png/50px-SUBSTANCE.WATER.1.png?version=23c0e4a4190ba9c3d2618338bddfae12",
      key: "salt"
+   },
+   silicatePowder: {
+     name: "Silicate Powder",
+     baseValue: 2.0,
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/7/7c/SUBSTANCE.SAND.1.png/50px-SUBSTANCE.SAND.1.png?version=2f8ffd2472674c9c13e9237aa06d6c75",
+     key: "silicatePowder"
    },
    silver: {
      name: "Silver",
-     groupKey: ResourceGroup.ASTEROID,
-     rarityKey: ResourceRarity.COMMON,
      baseValue: 101.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/b/b1/Substance.Silver.png/50px-Substance.Silver.png?version=59b0334a29a22a5eb016ea039904cabb",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/f/fd/SUBSTANCE.ASTEROID.1.png/50px-SUBSTANCE.ASTEROID.1.png?version=432d9e3861f73de57789b55d15c33a31",
      key: "silver"
    },
    sodium: {
      name: "Sodium",
-     groupKey: ResourceGroup.CATALYTIC,
-     rarityKey: ResourceRarity.COMMON,
      baseValue: 41.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/e/e1/Substance.Sodium.png/50px-Substance.Sodium.png?version=6608c8fd5f2454025506e0e5ef2950d1",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/5/54/SUBSTANCE.CATALYST.1.png/50px-SUBSTANCE.CATALYST.1.png?version=812b3c76818e457a83d2a93173c41401",
      key: "sodium"
    },
    sodiumNitrate: {
      name: "Sodium Nitrate",
-     groupKey: ResourceGroup.CATALYTIC,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 82.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/7/7c/Substance.SodiumNitrate.png/50px-Substance.SodiumNitrate.png?version=ff37537995e3b360e8c6e235e9a14c83",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/c/c3/SUBSTANCE.CATALYST.2.png/50px-SUBSTANCE.CATALYST.2.png?version=7298c5578e0a71958c5d857104a85fd1",
      key: "sodiumNitrate"
    },
    solanium: {
      name: "Solanium",
-     groupKey: ResourceGroup.AGRICULTURAL,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 70.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/f/fb/Substance.neutral.rare7.png/50px-Substance.neutral.rare7.png?version=10a1984358b5f339aeeb1c859294ddc3",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/f/fa/SUBSTANCE.PLANT.HOT.png/50px-SUBSTANCE.PLANT.HOT.png?version=0ea7a178de91610357f92d253079b0f6",
      key: "solanium"
    },
    starBulb: {
      name: "Star Bulb",
-     groupKey: ResourceGroup.AGRICULTURAL,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 32.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/3/3d/NmsResource_Star_Bulb_icon.png/50px-NmsResource_Star_Bulb_icon.png?version=d67b6eee52181633cdd238062fcf8213",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/7/72/SUBSTANCE.PLANT.LUSH.png/50px-SUBSTANCE.PLANT.LUSH.png?version=3b52610a855e4cf99e4bb8e5b84b07bb",
      key: "starBulb"
    },
    sulphurine: {
      name: "Sulphurine",
-     groupKey: ResourceGroup.GAS,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 20.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/7/77/GAS.1.png/50px-GAS.1.png?version=6eb8ca24e2de920dad3c970e288e9a97",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/7/77/GAS.3.png/50px-GAS.3.png?version=dfe7f84a5a1c6d6f2eba95cb158541b4",
      key: "sulphurine"
    },
    tritium: {
      name: "Tritium",
-     groupKey: ResourceGroup.HIGH_ENERGY,
-     rarityKey: ResourceRarity.COMMON,
      baseValue: 6.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/b/b9/SUBSTANCE.ROCKETSUB.png/50px-SUBSTANCE.ROCKETSUB.png?version=4585bf72af47bdea1ad35986dc42d5d0",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/b/b9/SUBSTANCE.ROCKETSUB.png/50px-SUBSTANCE.ROCKETSUB.png?version=f32dc5f09f3835652b8d9c3e84235e92",
      key: "tritium"
    },
    uranium: {
      name: "Uranium",
-     groupKey: ResourceGroup.LOCALISED,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 62.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/f/f1/Substance.Uranium.png/50px-Substance.Uranium.png?version=34be7948de5c86d66f10d89f04f5611a",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/7/73/SUBSTANCE.BIOME.RADIO.png/50px-SUBSTANCE.BIOME.RADIO.png?version=76d01c732e2293cc4f846d33e0d04ec4",
      key: "uranium"
    },
    viscousFluids: {
      name: "Viscous Fluids",
-     groupKey: ResourceGroup.JUNK,
-     rarityKey: ResourceRarity.UNCOMMON,
      baseValue: 20.0,
-     image: "https://d1u5p3l4wpay3k.cloudfront.net/nomanssky_gamepedia/thumb/0/0b/Viscousfluidsicon.png/50px-Viscousfluidsicon.png?version=ab775b98a5ba68d102d21d99ae72c8da",
+     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/f/fc/SPACEGUNK.5.png/50px-SPACEGUNK.5.png?version=92598c393e16e8a64baffe46e3e38acd",
      key: "viscousFluids"
    },
 };

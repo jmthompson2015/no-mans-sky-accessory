@@ -14,9 +14,6 @@ const HEADER = `// GENERATED FILE: Do not edit.
 
 // see https://nomanssky.gamepedia.com/Resource
 
-import ResourceGroup from "./ResourceGroup.js";
-import ResourceRarity from "./ResourceRarity.js";
-
 const Resource = {
 `;
 const DIVIDER = `};
@@ -77,18 +74,12 @@ const createResourceString = dataRow => {
   if (dataElements[1] !== undefined) {
     const image = extractImageSrc(dataElements[0]);
     const name = extractLinkName(dataElements[1]);
-    const group = extractCellContent(dataElements[3].trim());
-    const rarity = extractCellContent(dataElements[4].trim());
     const baseValue = extractCellContent(dataElements[5].trim());
 
     const enumValue = EnumGenerator.createEnumValue(name);
-    const groupEnumName = EnumGenerator.createEnumName(group);
-    const rarityEnumName = EnumGenerator.createEnumName(rarity);
 
     return `   ${enumValue}: {
      name: "${name}",
-     groupKey: ResourceGroup.${groupEnumName},
-     rarityKey: ResourceRarity.${rarityEnumName},
      baseValue: ${baseValue},
      image: "${image}",
      key: "${enumValue}"
@@ -112,12 +103,14 @@ ResourceConverter.convert = () => {
     const tableBody = data.substring(index0, index1 + key1.length);
     const dataRows = tableBody.split("</tr>");
 
-    const reduceFunction1 = (accum, row) => R.append(createResourceEnum(row), accum);
+    const reduceFunction1 = (accum, row) =>
+      R.append(createResourceEnum(row), accum);
     const array1 = R.reduce(reduceFunction1, [], dataRows);
     array1.sort();
     const content1 = array1.join("");
 
-    const reduceFunction2 = (accum, row) => R.append(createResourceString(row), accum);
+    const reduceFunction2 = (accum, row) =>
+      R.append(createResourceString(row), accum);
     const array2 = R.reduce(reduceFunction2, [], dataRows);
     array2.sort();
     const content2 = array2.join("");
