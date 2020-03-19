@@ -10,11 +10,6 @@ const TableColumns = [
     className: "tl"
   },
   {
-    key: "group",
-    label: "Group",
-    className: "tl"
-  },
-  {
     key: "baseValue",
     label: "Base Value",
     className: "tr"
