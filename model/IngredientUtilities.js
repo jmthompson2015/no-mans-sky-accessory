@@ -1,21 +1,19 @@
-import Product from "../artifact/Product.js";
-import Resource from "../artifact/Resource.js";
+import Resolver from "../artifact/Resolver.js";
 
 const IngredientUtilities = {};
 
-IngredientUtilities.thing = ingredient =>
-  ingredient
-    ? Resource.properties[ingredient.resourceKey] ||
-      Product.properties[ingredient.productKey]
-    : undefined;
-
 const arrayToString = array => {
-  const reduceFunction = (accum, myIngredient) =>
-    `${accum}${IngredientUtilities.toString(myIngredient)} + `;
+  const reduceFunction = (accum, ingredient) =>
+    `${accum}${IngredientUtilities.toString(ingredient)} + `;
   const string = R.reduce(reduceFunction, "", array);
 
   return string.substring(0, string.length - " + ".length);
 };
+
+IngredientUtilities.thing = ingredient =>
+  ingredient
+    ? Resolver.thing(ingredient.productKey || ingredient.resourceKey)
+    : undefined;
 
 IngredientUtilities.toString = ingredient => {
   if (Array.isArray(ingredient)) {

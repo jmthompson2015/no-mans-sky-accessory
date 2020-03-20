@@ -1,6 +1,6 @@
 /* eslint no-console: ["error", { allow: ["log","warn"] }] */
 
-import Device from "../../artifact/Device.js";
+import Resolver from "../../artifact/Resolver.js";
 
 import IngredientUtils from "../../model/IngredientUtilities.js";
 import RecipeUtils from "../../model/RecipeUtilities.js";
@@ -29,7 +29,7 @@ TableRow.createTableRow = recipe => {
     outputAmount: output.amount,
     outputValue: outputThing.baseValue,
     name: recipe.name,
-    device: Device.properties[recipe.device].name,
+    device: Resolver.device(recipe.device).name,
     input1: inputThing1 ? inputThing1.name : undefined,
     input1Amount: ingredient1 ? ingredient1.amount : undefined,
     input1Value: inputThing1 ? inputThing1.baseValue : undefined,
