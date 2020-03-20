@@ -1,7 +1,8 @@
-import Ingredient from "./Ingredient.js";
+import Ingredient from "../artifact/Ingredient.js";
+import Product from "../artifact/Product.js";
+import Resource from "../artifact/Resource.js";
+
 import IngredientUtilities from "./IngredientUtilities.js";
-import Product from "./Product.js";
-import Resource from "./Resource.js";
 
 QUnit.module("IngredientUtilities");
 

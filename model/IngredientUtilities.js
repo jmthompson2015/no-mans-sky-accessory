@@ -1,5 +1,5 @@
-import Product from "./Product.js";
-import Resource from "./Resource.js";
+import Product from "../artifact/Product.js";
+import Resource from "../artifact/Resource.js";
 
 const IngredientUtilities = {};
 

@@ -1,8 +1,9 @@
 /* eslint no-console: ["error", { allow: ["log"] }] */
 
-import CrafterRecipe from "./CrafterRecipe.js";
+import CrafterRecipe from "../artifact/CrafterRecipe.js";
+import RefinerRecipe from "../artifact/RefinerRecipe.js";
+
 import RecipeUtilities from "./RecipeUtilities.js";
-import RefinerRecipe from "./RefinerRecipe.js";
 
 QUnit.module("RecipeUtilities");
 

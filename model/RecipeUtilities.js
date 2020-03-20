@@ -1,8 +1,13 @@
-import CrafterRecipe from "./CrafterRecipe.js";
+import CrafterRecipe from "../artifact/CrafterRecipe.js";
+import RefinerRecipe from "../artifact/RefinerRecipe.js";
+
 import IngredientUtils from "./IngredientUtilities.js";
-import RefinerRecipe from "./RefinerRecipe.js";
 
 const RecipeUtilities = {};
+
+RecipeUtilities.accept = (recipe, visitor) => {
+  visitor.visit(recipe);
+};
 
 RecipeUtilities.findByName = name => {
   const filterFunction = r => r.name === name;

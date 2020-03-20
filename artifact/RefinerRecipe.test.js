@@ -1,7 +1,8 @@
 /* eslint no-console: ["error", { allow: ["log"] }] */
 
-import RecipeUtils from "./RecipeUtilities.js";
 import RefinerRecipe from "./RefinerRecipe.js";
+
+import RecipeUtils from "../model/RecipeUtilities.js";
 
 QUnit.module("RefinerRecipe");
 

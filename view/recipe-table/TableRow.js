@@ -1,8 +1,9 @@
 /* eslint no-console: ["error", { allow: ["log","warn"] }] */
 
 import Device from "../../artifact/Device.js";
-import IngredientUtils from "../../artifact/IngredientUtilities.js";
-import RecipeUtils from "../../artifact/RecipeUtilities.js";
+
+import IngredientUtils from "../../model/IngredientUtilities.js";
+import RecipeUtils from "../../model/RecipeUtilities.js";
 
 const TableRow = {};
 
