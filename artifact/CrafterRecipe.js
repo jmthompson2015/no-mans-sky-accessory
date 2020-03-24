@@ -3,10 +3,8 @@ import Ingredient from "./Ingredient.js";
 import Product from "./Product.js";
 import Resource from "./Resource.js";
 
-const productIngredient = (productKey, amount) =>
-  Ingredient.create({ productKey, amount });
-const resourceIngredient = (resourceKey, amount) =>
-  Ingredient.create({ resourceKey, amount });
+const productIngredient = (productKey, amount) => Ingredient.create({ productKey, amount });
+const resourceIngredient = (resourceKey, amount) => Ingredient.create({ resourceKey, amount });
 
 const CrafterRecipe = [
   {
@@ -75,10 +73,7 @@ const CrafterRecipe = [
   {
     name: "Circuit Board",
     output: productIngredient(Product.CIRCUIT_BOARD),
-    inputs: [
-      productIngredient(Product.HEAT_CAPACITOR),
-      productIngredient(Product.POLY_FIBRE)
-    ],
+    inputs: [productIngredient(Product.HEAT_CAPACITOR), productIngredient(Product.POLY_FIBRE)],
     device: Device.CRAFTER
   },
   {
@@ -90,19 +85,13 @@ const CrafterRecipe = [
   {
     name: "Cryo-Pump",
     output: productIngredient(Product.CRYO_PUMP),
-    inputs: [
-      productIngredient(Product.HOT_ICE),
-      productIngredient(Product.THERMIC_CONDENSATE)
-    ],
+    inputs: [productIngredient(Product.HOT_ICE), productIngredient(Product.THERMIC_CONDENSATE)],
     device: Device.CRAFTER
   },
   {
     name: "Cryogenic Chamber",
     output: productIngredient(Product.CRYOGENIC_CHAMBER),
-    inputs: [
-      productIngredient(Product.CRYO_PUMP),
-      productIngredient(Product.LIVING_GLASS)
-    ],
+    inputs: [productIngredient(Product.CRYO_PUMP), productIngredient(Product.LIVING_GLASS)],
     device: Device.CRAFTER
   },
   {
@@ -138,10 +127,7 @@ const CrafterRecipe = [
   {
     name: "Explosive Drones",
     output: productIngredient(Product.EXPLOSIVE_DRONES),
-    inputs: [
-      resourceIngredient(Resource.GOLD, 50),
-      productIngredient(Product.WALKER_BRAIN)
-    ],
+    inputs: [resourceIngredient(Resource.GOLD, 50), productIngredient(Product.WALKER_BRAIN)],
     device: Device.CRAFTER
   },
   {
@@ -174,19 +160,13 @@ const CrafterRecipe = [
   {
     name: "Fuel Oxidiser",
     output: productIngredient(Product.FUEL_OXIDISER),
-    inputs: [
-      productIngredient(Product.QUAD_SERVO, 2),
-      resourceIngredient(Resource.GOLD, 50)
-    ],
+    inputs: [productIngredient(Product.QUAD_SERVO, 2), resourceIngredient(Resource.GOLD, 50)],
     device: Device.CRAFTER
   },
   {
     name: "Fusion Accelerant",
     output: productIngredient(Product.FUSION_ACCELERANT),
-    inputs: [
-      productIngredient(Product.NITROGEN_SALT),
-      productIngredient(Product.ORGANIC_CATALYST)
-    ],
+    inputs: [productIngredient(Product.NITROGEN_SALT), productIngredient(Product.ORGANIC_CATALYST)],
     device: Device.CRAFTER
   },
   {
@@ -207,12 +187,6 @@ const CrafterRecipe = [
       productIngredient(Product.HEROX),
       productIngredient(Product.LEMMIUM)
     ],
-    device: Device.CRAFTER
-  },
-  {
-    name: "Glass",
-    output: productIngredient(Product.GLASS),
-    inputs: [resourceIngredient(Resource.FROST_CRYSTAL, 40)],
     device: Device.CRAFTER
   },
   {
@@ -251,19 +225,13 @@ const CrafterRecipe = [
   {
     name: "Holographic Analyser",
     output: productIngredient(Product.HOLOGRAPHIC_ANALYSER),
-    inputs: [
-      resourceIngredient(Resource.GOLD, 50),
-      productIngredient(Product.OXYGEN_FILTER)
-    ],
+    inputs: [resourceIngredient(Resource.GOLD, 50), productIngredient(Product.OXYGEN_FILTER)],
     device: Device.CRAFTER
   },
   {
     name: "Hot Ice",
     output: productIngredient(Product.HOT_ICE),
-    inputs: [
-      productIngredient(Product.ENRICHED_CARBON),
-      productIngredient(Product.NITROGEN_SALT)
-    ],
+    inputs: [productIngredient(Product.ENRICHED_CARBON), productIngredient(Product.NITROGEN_SALT)],
     device: Device.CRAFTER
   },
   {
@@ -297,28 +265,19 @@ const CrafterRecipe = [
   {
     name: "Life Support Gel",
     output: productIngredient(Product.LIFE_SUPPORT_GEL),
-    inputs: [
-      productIngredient(Product.DI_HYDROGEN_JELLY),
-      resourceIngredient(Resource.CARBON, 20)
-    ],
+    inputs: [productIngredient(Product.DI_HYDROGEN_JELLY), resourceIngredient(Resource.CARBON, 20)],
     device: Device.CRAFTER
   },
   {
     name: "Liquid Explosive",
     output: productIngredient(Product.LIQUID_EXPLOSIVE),
-    inputs: [
-      productIngredient(Product.ACID),
-      productIngredient(Product.UNSTABLE_GEL)
-    ],
+    inputs: [productIngredient(Product.ACID), productIngredient(Product.UNSTABLE_GEL)],
     device: Device.CRAFTER
   },
   {
     name: "Living Glass",
     output: productIngredient(Product.LIVING_GLASS),
-    inputs: [
-      productIngredient(Product.LUBRICANT),
-      productIngredient(Product.GLASS, 5)
-    ],
+    inputs: [productIngredient(Product.LUBRICANT), productIngredient(Product.GLASS, 5)],
     device: Device.CRAFTER
   },
   {
@@ -357,19 +316,13 @@ const CrafterRecipe = [
   {
     name: "Mind Control Device",
     output: productIngredient(Product.MIND_CONTROL_DEVICE),
-    inputs: [
-      resourceIngredient(Resource.GOLD, 50),
-      productIngredient(Product.SODIUM_DIODE)
-    ],
+    inputs: [resourceIngredient(Resource.GOLD, 50), productIngredient(Product.SODIUM_DIODE)],
     device: Device.CRAFTER
   },
   {
     name: "Mineral Compressor",
     output: productIngredient(Product.MINERAL_COMPRESSOR),
-    inputs: [
-      productIngredient(Product.COBALT_MIRROR),
-      resourceIngredient(Resource.GOLD, 50)
-    ],
+    inputs: [productIngredient(Product.COBALT_MIRROR), resourceIngredient(Resource.GOLD, 50)],
     device: Device.CRAFTER
   },
   {
@@ -426,10 +379,7 @@ const CrafterRecipe = [
   {
     name: "Quantum Processor",
     output: productIngredient(Product.QUANTUM_PROCESSOR),
-    inputs: [
-      productIngredient(Product.CIRCUIT_BOARD),
-      productIngredient(Product.SUPERCONDUCTOR)
-    ],
+    inputs: [productIngredient(Product.CIRCUIT_BOARD), productIngredient(Product.SUPERCONDUCTOR)],
     device: Device.CRAFTER
   },
   {
@@ -484,10 +434,7 @@ const CrafterRecipe = [
   {
     name: "Superconductor",
     output: productIngredient(Product.SUPERCONDUCTOR),
-    inputs: [
-      productIngredient(Product.ENRICHED_CARBON),
-      productIngredient(Product.SEMICONDUCTOR)
-    ],
+    inputs: [productIngredient(Product.ENRICHED_CARBON), productIngredient(Product.SEMICONDUCTOR)],
     device: Device.CRAFTER
   },
   {
@@ -520,28 +467,19 @@ const CrafterRecipe = [
   {
     name: "Unstable Plasma",
     output: productIngredient(Product.UNSTABLE_PLASMA),
-    inputs: [
-      productIngredient(Product.METAL_PLATING),
-      resourceIngredient(Resource.OXYGEN, 50)
-    ],
+    inputs: [productIngredient(Product.METAL_PLATING), resourceIngredient(Resource.OXYGEN, 50)],
     device: Device.CRAFTER
   },
   {
     name: "Warp Cell",
     output: productIngredient(Product.WARP_CELL),
-    inputs: [
-      productIngredient(Product.ANTIMATTER),
-      productIngredient(Product.ANTIMATTER_HOUSING)
-    ],
+    inputs: [productIngredient(Product.ANTIMATTER), productIngredient(Product.ANTIMATTER_HOUSING)],
     device: Device.CRAFTER
   },
   {
     name: "Warp Hypercore",
     output: productIngredient(Product.WARP_HYPERCORE),
-    inputs: [
-      productIngredient(Product.ANTIMATTER),
-      productIngredient(Product.STORM_CRYSTAL)
-    ],
+    inputs: [productIngredient(Product.ANTIMATTER), productIngredient(Product.STORM_CRYSTAL)],
     device: Device.CRAFTER
   }
 ];

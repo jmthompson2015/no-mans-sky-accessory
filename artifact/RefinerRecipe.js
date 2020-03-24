@@ -7,6 +7,38 @@ const productIngredient = (productKey, amount) => Ingredient.create({ productKey
 const resourceIngredient = (resourceKey, amount) => Ingredient.create({ resourceKey, amount });
 
 const RefinerRecipe = [
+  // Ammonia
+  {
+    name: "Enviromental Element Transfer",
+    output: resourceIngredient(Resource.AMMONIA, 1),
+    inputs: [
+      resourceIngredient(Resource.PARAFFINIUM, 2),
+      resourceIngredient(Resource.FERRITE_DUST, 1)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Enviromental Element Transfer",
+    output: resourceIngredient(Resource.AMMONIA, 1),
+    inputs: [
+      resourceIngredient(Resource.PARAFFINIUM, 2),
+      resourceIngredient(Resource.PURE_FERRITE, 1)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Floral Titration",
+    output: resourceIngredient(Resource.AMMONIA, 1),
+    inputs: [resourceIngredient(Resource.FUNGAL_MOULD, 2), resourceIngredient(Resource.SALT, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Organic Fusion",
+    output: resourceIngredient(Resource.AMMONIA, 1),
+    inputs: [resourceIngredient(Resource.NITROGEN, 1), resourceIngredient(Resource.DI_HYDROGEN, 1)],
+    device: Device.REFINER
+  },
+  // ///////////////////////////////////////////////////////////////////////////////////////////////
   // Chlorine
   {
     name: "Bonded Chlorine Extraction",
@@ -207,6 +239,317 @@ const RefinerRecipe = [
     device: Device.REFINER
   },
   // ///////////////////////////////////////////////////////////////////////////////////////////////
+  // Dirty Bronze
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.DIRTY_BRONZE, 1),
+    inputs: [
+      resourceIngredient(Resource.PYRITE, 30),
+      resourceIngredient(Resource.FERRITE_DUST, 120),
+      resourceIngredient(Resource.TRITIUM, 20)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.DIRTY_BRONZE, 1),
+    inputs: [
+      resourceIngredient(Resource.PYRITE, 30),
+      resourceIngredient(Resource.PURE_FERRITE, 60),
+      resourceIngredient(Resource.TRITIUM, 20)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.DIRTY_BRONZE, 1),
+    inputs: [
+      resourceIngredient(Resource.PYRITE, 30),
+      resourceIngredient(Resource.FERRITE_DUST, 120),
+      resourceIngredient(Resource.SILVER, 20)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.DIRTY_BRONZE, 1),
+    inputs: [
+      resourceIngredient(Resource.PYRITE, 30),
+      resourceIngredient(Resource.PURE_FERRITE, 60),
+      resourceIngredient(Resource.SILVER, 20)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.DIRTY_BRONZE, 1),
+    inputs: [
+      resourceIngredient(Resource.PYRITE, 30),
+      resourceIngredient(Resource.FERRITE_DUST, 120),
+      resourceIngredient(Resource.GOLD, 10)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.DIRTY_BRONZE, 1),
+    inputs: [
+      resourceIngredient(Resource.PYRITE, 30),
+      resourceIngredient(Resource.PURE_FERRITE, 60),
+      resourceIngredient(Resource.GOLD, 10)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.DIRTY_BRONZE, 1),
+    inputs: [
+      resourceIngredient(Resource.PYRITE, 30),
+      resourceIngredient(Resource.FERRITE_DUST, 120),
+      resourceIngredient(Resource.PLATINUM, 5)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.DIRTY_BRONZE, 1),
+    inputs: [
+      resourceIngredient(Resource.PYRITE, 30),
+      resourceIngredient(Resource.PURE_FERRITE, 60),
+      resourceIngredient(Resource.PLATINUM, 5)
+    ],
+    device: Device.REFINER
+  },
+  // ///////////////////////////////////////////////////////////////////////////////////////////////
+  // Enriched Carbon
+  {
+    name: "High-Speed Sublimation",
+    output: productIngredient(Product.ENRICHED_CARBON, 1),
+    inputs: [
+      resourceIngredient(Resource.RADON, 100),
+      resourceIngredient(Resource.CARBON, 20),
+      resourceIngredient(Resource.SALT, 10)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "High-Speed Sublimation",
+    output: productIngredient(Product.ENRICHED_CARBON, 1),
+    inputs: [
+      resourceIngredient(Resource.RADON, 100),
+      resourceIngredient(Resource.CONDENSED_CARBON, 10),
+      resourceIngredient(Resource.SALT, 10)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "High-Speed Sublimation",
+    output: productIngredient(Product.ENRICHED_CARBON, 1),
+    inputs: [
+      resourceIngredient(Resource.RADON, 100),
+      resourceIngredient(Resource.CARBON, 20),
+      resourceIngredient(Resource.CHLORINE, 5)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "High-Speed Sublimation",
+    output: productIngredient(Product.ENRICHED_CARBON, 1),
+    inputs: [
+      resourceIngredient(Resource.RADON, 100),
+      resourceIngredient(Resource.CONDENSED_CARBON, 10),
+      resourceIngredient(Resource.CHLORINE, 5)
+    ],
+    device: Device.REFINER
+  },
+  // ///////////////////////////////////////////////////////////////////////////////////////////////
+  // Herox
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.HEROX, 1),
+    inputs: [
+      resourceIngredient(Resource.AMMONIA, 30),
+      resourceIngredient(Resource.COBALT, 60),
+      resourceIngredient(Resource.TRITIUM, 20)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.HEROX, 1),
+    inputs: [
+      resourceIngredient(Resource.AMMONIA, 30),
+      resourceIngredient(Resource.IONISED_COBALT, 30),
+      resourceIngredient(Resource.TRITIUM, 20)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.HEROX, 1),
+    inputs: [
+      resourceIngredient(Resource.AMMONIA, 30),
+      resourceIngredient(Resource.COBALT, 60),
+      resourceIngredient(Resource.SILVER, 20)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.HEROX, 1),
+    inputs: [
+      resourceIngredient(Resource.AMMONIA, 30),
+      resourceIngredient(Resource.IONISED_COBALT, 30),
+      resourceIngredient(Resource.SILVER, 20)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.HEROX, 1),
+    inputs: [
+      resourceIngredient(Resource.AMMONIA, 30),
+      resourceIngredient(Resource.COBALT, 60),
+      resourceIngredient(Resource.GOLD, 10)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.HEROX, 1),
+    inputs: [
+      resourceIngredient(Resource.AMMONIA, 30),
+      resourceIngredient(Resource.IONISED_COBALT, 30),
+      resourceIngredient(Resource.GOLD, 10)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.HEROX, 1),
+    inputs: [
+      resourceIngredient(Resource.AMMONIA, 30),
+      resourceIngredient(Resource.COBALT, 60),
+      resourceIngredient(Resource.PLATINUM, 5)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.HEROX, 1),
+    inputs: [
+      resourceIngredient(Resource.AMMONIA, 30),
+      resourceIngredient(Resource.IONISED_COBALT, 30),
+      resourceIngredient(Resource.PLATINUM, 5)
+    ],
+    device: Device.REFINER
+  },
+  // ///////////////////////////////////////////////////////////////////////////////////////////////
+  // Glass
+  {
+    name: "Glass",
+    output: productIngredient(Product.GLASS, 1),
+    inputs: [resourceIngredient(Resource.FROST_CRYSTAL, 40)],
+    device: Device.REFINER
+  },
+  {
+    name: "Glass",
+    output: productIngredient(Product.GLASS, 1),
+    inputs: [resourceIngredient(Resource.SILICATE_POWDER, 40)],
+    device: Device.REFINER
+  },
+  {
+    name: "Salt Crystal Polishing",
+    output: productIngredient(Product.GLASS, 1),
+    inputs: [
+      resourceIngredient(Resource.CYTO_PHOSPHATE, 50),
+      resourceIngredient(Resource.SALT, 50)
+    ],
+    device: Device.REFINER
+  },
+  // ///////////////////////////////////////////////////////////////////////////////////////////////
+  // Lemmium
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.LEMMIUM, 1),
+    inputs: [
+      resourceIngredient(Resource.URANIUM, 30),
+      resourceIngredient(Resource.FERRITE_DUST, 120),
+      resourceIngredient(Resource.TRITIUM, 20)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.LEMMIUM, 1),
+    inputs: [
+      resourceIngredient(Resource.URANIUM, 30),
+      resourceIngredient(Resource.PURE_FERRITE, 60),
+      resourceIngredient(Resource.TRITIUM, 20)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.LEMMIUM, 1),
+    inputs: [
+      resourceIngredient(Resource.URANIUM, 30),
+      resourceIngredient(Resource.FERRITE_DUST, 120),
+      resourceIngredient(Resource.SILVER, 20)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.LEMMIUM, 1),
+    inputs: [
+      resourceIngredient(Resource.URANIUM, 30),
+      resourceIngredient(Resource.PURE_FERRITE, 60),
+      resourceIngredient(Resource.SILVER, 20)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.LEMMIUM, 1),
+    inputs: [
+      resourceIngredient(Resource.URANIUM, 30),
+      resourceIngredient(Resource.FERRITE_DUST, 120),
+      resourceIngredient(Resource.GOLD, 10)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.LEMMIUM, 1),
+    inputs: [
+      resourceIngredient(Resource.URANIUM, 30),
+      resourceIngredient(Resource.PURE_FERRITE, 60),
+      resourceIngredient(Resource.GOLD, 10)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.LEMMIUM, 1),
+    inputs: [
+      resourceIngredient(Resource.URANIUM, 30),
+      resourceIngredient(Resource.FERRITE_DUST, 120),
+      resourceIngredient(Resource.PLATINUM, 5)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Alloy Latticing",
+    output: productIngredient(Product.LEMMIUM, 1),
+    inputs: [
+      resourceIngredient(Resource.URANIUM, 30),
+      resourceIngredient(Resource.PURE_FERRITE, 60),
+      resourceIngredient(Resource.PLATINUM, 5)
+    ],
+    device: Device.REFINER
+  },
+  // ///////////////////////////////////////////////////////////////////////////////////////////////
   // Nanite Clusters
   {
     name: "Alchemical Construction",
@@ -249,16 +592,124 @@ const RefinerRecipe = [
     device: Device.REFINER
   },
   // ///////////////////////////////////////////////////////////////////////////////////////////////
+  // Nitrogen Salt
+  {
+    name: "High-Speed Sublimation",
+    output: productIngredient(Product.NITROGEN_SALT, 1),
+    inputs: [
+      resourceIngredient(Resource.NITROGEN, 100),
+      resourceIngredient(Resource.CARBON, 20),
+      resourceIngredient(Resource.SALT, 10)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "High-Speed Sublimation",
+    output: productIngredient(Product.NITROGEN_SALT, 1),
+    inputs: [
+      resourceIngredient(Resource.NITROGEN, 100),
+      resourceIngredient(Resource.CONDENSED_CARBON, 10),
+      resourceIngredient(Resource.SALT, 10)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "High-Speed Sublimation",
+    output: productIngredient(Product.NITROGEN_SALT, 1),
+    inputs: [
+      resourceIngredient(Resource.NITROGEN, 100),
+      resourceIngredient(Resource.CARBON, 20),
+      resourceIngredient(Resource.CHLORINE, 5)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "High-Speed Sublimation",
+    output: productIngredient(Product.NITROGEN_SALT, 1),
+    inputs: [
+      resourceIngredient(Resource.NITROGEN, 100),
+      resourceIngredient(Resource.CONDENSED_CARBON, 10),
+      resourceIngredient(Resource.CHLORINE, 5)
+    ],
+    device: Device.REFINER
+  },
+  // ///////////////////////////////////////////////////////////////////////////////////////////////
+  // Platinum
+  {
+    name: "Chromatic Alchemy",
+    output: resourceIngredient(Resource.PLATINUM, 10),
+    inputs: [
+      resourceIngredient(Resource.FERRITE_DUST, 1),
+      resourceIngredient(Resource.OXYGEN, 1),
+      resourceIngredient(Resource.CHROMATIC_METAL, 250)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Extreme Alloy Separation",
+    output: resourceIngredient(Resource.PLATINUM, 250),
+    inputs: [productIngredient(Product.GEODESITE, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Extreme Alloy Separation",
+    output: resourceIngredient(Resource.PLATINUM, 250),
+    inputs: [productIngredient(Product.IRIDESITE, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Transmutation",
+    output: resourceIngredient(Resource.PLATINUM, 1),
+    inputs: [resourceIngredient(Resource.SILVER, 1), resourceIngredient(Resource.GOLD, 1)],
+    device: Device.REFINER
+  },
+  // ///////////////////////////////////////////////////////////////////////////////////////////////
+  // Thermic Condensate
+  {
+    name: "High-Speed Sublimation",
+    output: productIngredient(Product.THERMIC_CONDENSATE, 1),
+    inputs: [
+      resourceIngredient(Resource.SULPHURINE, 100),
+      resourceIngredient(Resource.CARBON, 20),
+      resourceIngredient(Resource.SALT, 10)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "High-Speed Sublimation",
+    output: productIngredient(Product.THERMIC_CONDENSATE, 1),
+    inputs: [
+      resourceIngredient(Resource.SULPHURINE, 100),
+      resourceIngredient(Resource.CONDENSED_CARBON, 10),
+      resourceIngredient(Resource.SALT, 10)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "High-Speed Sublimation",
+    output: productIngredient(Product.THERMIC_CONDENSATE, 1),
+    inputs: [
+      resourceIngredient(Resource.SULPHURINE, 100),
+      resourceIngredient(Resource.CARBON, 20),
+      resourceIngredient(Resource.CHLORINE, 5)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "High-Speed Sublimation",
+    output: productIngredient(Product.THERMIC_CONDENSATE, 1),
+    inputs: [
+      resourceIngredient(Resource.SULPHURINE, 100),
+      resourceIngredient(Resource.CONDENSED_CARBON, 10),
+      resourceIngredient(Resource.CHLORINE, 5)
+    ],
+    device: Device.REFINER
+  }
+  // ///////////////////////////////////////////////////////////////////////////////////////////////
   // {
   //   name: "Alchemical Construction",
   //   output: resourceIngredient(Resource.GOLD, 1),
   //   inputs: [resourceIngredient(Resource.HEXITE, 1)],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Extreme Polishing",
-  //   output: productIngredient(Product.GLASS, 1),
-  //   inputs: [resourceIngredient(Resource.SILVER, 100)],
   //   device: Device.REFINER
   // },
   // {
@@ -555,18 +1006,6 @@ const RefinerRecipe = [
   //   inputs: [productIngredient(Product.GRANTINE, 1)],
   //   device: Device.REFINER
   // },
-  {
-    name: "Extreme Alloy Separation",
-    output: resourceIngredient(Resource.PLATINUM, 250),
-    inputs: [productIngredient(Product.GEODESITE, 1)],
-    device: Device.REFINER
-  },
-  {
-    name: "Extreme Alloy Separation",
-    output: resourceIngredient(Resource.PLATINUM, 250),
-    inputs: [productIngredient(Product.IRIDESITE, 1)],
-    device: Device.REFINER
-  },
   // {
   //   name: "Alchemical Construction",
   //   output: resourceIngredient(Resource.GOLD, 1),
@@ -576,12 +1015,6 @@ const RefinerRecipe = [
   //   ],
   //   device: Device.REFINER
   // },
-  {
-    name: "Transmutation",
-    output: resourceIngredient(Resource.PLATINUM, 1),
-    inputs: [resourceIngredient(Resource.SILVER, 1), resourceIngredient(Resource.GOLD, 1)],
-    device: Device.REFINER
-  }
   // {
   //   name: "Harness Energy",
   //   output: resourceIngredient(Resource.CONDENSED_CARBON, 2),
@@ -605,15 +1038,6 @@ const RefinerRecipe = [
   //   output: resourceIngredient(Resource.URANIUM, 1),
   //   inputs: [
   //     resourceIngredient(Resource.RADON, 1),
-  //     resourceIngredient(Resource.DI_HYDROGEN, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Organic Fusion",
-  //   output: resourceIngredient(Resource.AMMONIA, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.NITROGEN, 1),
   //     resourceIngredient(Resource.DI_HYDROGEN, 1)
   //   ],
   //   device: Device.REFINER
@@ -1394,15 +1818,6 @@ const RefinerRecipe = [
   // },
   // {
   //   name: "Enviromental Element Transfer",
-  //   output: resourceIngredient(Resource.AMMONIA, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.PARAFFINIUM, 2),
-  //     resourceIngredient(Resource.FERRITE_DUST, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Enviromental Element Transfer",
   //   output: resourceIngredient(Resource.PARAFFINIUM, 1),
   //   inputs: [
   //     resourceIngredient(Resource.PYRITE, 2),
@@ -1448,15 +1863,6 @@ const RefinerRecipe = [
   // },
   // {
   //   name: "Enviromental Element Transfer",
-  //   output: resourceIngredient(Resource.AMMONIA, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.PARAFFINIUM, 2),
-  //     resourceIngredient(Resource.PURE_FERRITE, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Enviromental Element Transfer",
   //   output: resourceIngredient(Resource.PARAFFINIUM, 1),
   //   inputs: [
   //     resourceIngredient(Resource.PYRITE, 2),
@@ -1497,15 +1903,6 @@ const RefinerRecipe = [
   //   inputs: [
   //     resourceIngredient(Resource.PHOSPHORUS, 2),
   //     resourceIngredient(Resource.PURE_FERRITE, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Floral Titration",
-  //   output: resourceIngredient(Resource.AMMONIA, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.FUNGAL_MOULD, 2),
-  //     resourceIngredient(Resource.SALT, 1)
   //   ],
   //   device: Device.REFINER
   // },
@@ -2152,246 +2549,6 @@ const RefinerRecipe = [
   // },
   // {
   //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.DIRTY_BRONZE, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.PYRITE, 30),
-  //     resourceIngredient(Resource.FERRITE_DUST, 120),
-  //     resourceIngredient(Resource.TRITIUM, 20)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.DIRTY_BRONZE, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.PYRITE, 30),
-  //     resourceIngredient(Resource.PURE_FERRITE, 60),
-  //     resourceIngredient(Resource.TRITIUM, 20)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.DIRTY_BRONZE, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.PYRITE, 30),
-  //     resourceIngredient(Resource.FERRITE_DUST, 120),
-  //     resourceIngredient(Resource.SILVER, 20)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.DIRTY_BRONZE, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.PYRITE, 30),
-  //     resourceIngredient(Resource.PURE_FERRITE, 60),
-  //     resourceIngredient(Resource.SILVER, 20)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.DIRTY_BRONZE, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.PYRITE, 30),
-  //     resourceIngredient(Resource.FERRITE_DUST, 120),
-  //     resourceIngredient(Resource.GOLD, 10)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.DIRTY_BRONZE, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.PYRITE, 30),
-  //     resourceIngredient(Resource.PURE_FERRITE, 60),
-  //     resourceIngredient(Resource.GOLD, 10)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.DIRTY_BRONZE, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.PYRITE, 30),
-  //     resourceIngredient(Resource.FERRITE_DUST, 120),
-  //     resourceIngredient(Resource.PLATINUM, 5)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.DIRTY_BRONZE, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.PYRITE, 30),
-  //     resourceIngredient(Resource.PURE_FERRITE, 60),
-  //     resourceIngredient(Resource.PLATINUM, 5)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.HEROX, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.AMMONIA, 30),
-  //     resourceIngredient(Resource.COBALT, 60),
-  //     resourceIngredient(Resource.TRITIUM, 20)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.HEROX, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.AMMONIA, 30),
-  //     resourceIngredient(Resource.IONISED_COBALT, 30),
-  //     resourceIngredient(Resource.TRITIUM, 20)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.HEROX, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.AMMONIA, 30),
-  //     resourceIngredient(Resource.COBALT, 60),
-  //     resourceIngredient(Resource.SILVER, 20)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.HEROX, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.AMMONIA, 30),
-  //     resourceIngredient(Resource.IONISED_COBALT, 30),
-  //     resourceIngredient(Resource.SILVER, 20)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.HEROX, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.AMMONIA, 30),
-  //     resourceIngredient(Resource.COBALT, 60),
-  //     resourceIngredient(Resource.GOLD, 10)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.HEROX, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.AMMONIA, 30),
-  //     resourceIngredient(Resource.IONISED_COBALT, 30),
-  //     resourceIngredient(Resource.GOLD, 10)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.HEROX, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.AMMONIA, 30),
-  //     resourceIngredient(Resource.COBALT, 60),
-  //     resourceIngredient(Resource.PLATINUM, 5)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.HEROX, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.AMMONIA, 30),
-  //     resourceIngredient(Resource.IONISED_COBALT, 30),
-  //     resourceIngredient(Resource.PLATINUM, 5)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.LEMMIUM, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.URANIUM, 30),
-  //     resourceIngredient(Resource.FERRITE_DUST, 120),
-  //     resourceIngredient(Resource.TRITIUM, 20)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.LEMMIUM, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.URANIUM, 30),
-  //     resourceIngredient(Resource.PURE_FERRITE, 60),
-  //     resourceIngredient(Resource.TRITIUM, 20)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.LEMMIUM, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.URANIUM, 30),
-  //     resourceIngredient(Resource.FERRITE_DUST, 120),
-  //     resourceIngredient(Resource.SILVER, 20)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.LEMMIUM, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.URANIUM, 30),
-  //     resourceIngredient(Resource.PURE_FERRITE, 60),
-  //     resourceIngredient(Resource.SILVER, 20)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.LEMMIUM, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.URANIUM, 30),
-  //     resourceIngredient(Resource.FERRITE_DUST, 120),
-  //     resourceIngredient(Resource.GOLD, 10)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.LEMMIUM, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.URANIUM, 30),
-  //     resourceIngredient(Resource.PURE_FERRITE, 60),
-  //     resourceIngredient(Resource.GOLD, 10)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.LEMMIUM, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.URANIUM, 30),
-  //     resourceIngredient(Resource.FERRITE_DUST, 120),
-  //     resourceIngredient(Resource.PLATINUM, 5)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
-  //   output: productIngredient(Product.LEMMIUM, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.URANIUM, 30),
-  //     resourceIngredient(Resource.PURE_FERRITE, 60),
-  //     resourceIngredient(Resource.PLATINUM, 5)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alloy Latticing",
   //   output: productIngredient(Product.MAGNO_GOLD, 1),
   //   inputs: [
   //     resourceIngredient(Resource.PHOSPHORUS, 30),
@@ -2550,126 +2707,6 @@ const RefinerRecipe = [
   //   ],
   //   device: Device.REFINER
   // },
-  // {
-  //   name: "High-Speed Sublimation",
-  //   output: productIngredient(Product.THERMIC_CONDENSATE, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.SULPHURINE, 100),
-  //     resourceIngredient(Resource.CARBON, 20),
-  //     resourceIngredient(Resource.SALT, 10)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "High-Speed Sublimation",
-  //   output: productIngredient(Product.ENRICHED_CARBON, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.RADON, 100),
-  //     resourceIngredient(Resource.CARBON, 20),
-  //     resourceIngredient(Resource.SALT, 10)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "High-Speed Sublimation",
-  //   output: productIngredient(Product.NITROGEN_SALT, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.NITROGEN, 100),
-  //     resourceIngredient(Resource.CARBON, 20),
-  //     resourceIngredient(Resource.SALT, 10)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "High-Speed Sublimation",
-  //   output: productIngredient(Product.THERMIC_CONDENSATE, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.SULPHURINE, 100),
-  //     resourceIngredient(Resource.CONDENSED_CARBON, 10),
-  //     resourceIngredient(Resource.SALT, 10)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "High-Speed Sublimation",
-  //   output: productIngredient(Product.ENRICHED_CARBON, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.RADON, 100),
-  //     resourceIngredient(Resource.CONDENSED_CARBON, 10),
-  //     resourceIngredient(Resource.SALT, 10)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "High-Speed Sublimation",
-  //   output: productIngredient(Product.NITROGEN_SALT, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.NITROGEN, 100),
-  //     resourceIngredient(Resource.CONDENSED_CARBON, 10),
-  //     resourceIngredient(Resource.SALT, 10)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "High-Speed Sublimation",
-  //   output: productIngredient(Product.THERMIC_CONDENSATE, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.SULPHURINE, 100),
-  //     resourceIngredient(Resource.CARBON, 20),
-  //     resourceIngredient(Resource.CHLORINE, 5)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "High-Speed Sublimation",
-  //   output: productIngredient(Product.ENRICHED_CARBON, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.RADON, 100),
-  //     resourceIngredient(Resource.CARBON, 20),
-  //     resourceIngredient(Resource.CHLORINE, 5)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "High-Speed Sublimation",
-  //   output: productIngredient(Product.NITROGEN_SALT, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.NITROGEN, 100),
-  //     resourceIngredient(Resource.CARBON, 20),
-  //     resourceIngredient(Resource.CHLORINE, 5)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "High-Speed Sublimation",
-  //   output: productIngredient(Product.THERMIC_CONDENSATE, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.SULPHURINE, 100),
-  //     resourceIngredient(Resource.CONDENSED_CARBON, 10),
-  //     resourceIngredient(Resource.CHLORINE, 5)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "High-Speed Sublimation",
-  //   output: productIngredient(Product.ENRICHED_CARBON, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.RADON, 100),
-  //     resourceIngredient(Resource.CONDENSED_CARBON, 10),
-  //     resourceIngredient(Resource.CHLORINE, 5)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "High-Speed Sublimation",
-  //   output: productIngredient(Product.NITROGEN_SALT, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.NITROGEN, 100),
-  //     resourceIngredient(Resource.CONDENSED_CARBON, 10),
-  //     resourceIngredient(Resource.CHLORINE, 5)
-  //   ],
-  //   device: Device.REFINER
-  // }
 ];
 
 export default RefinerRecipe;

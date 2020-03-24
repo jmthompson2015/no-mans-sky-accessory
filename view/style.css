@@ -7,7 +7,7 @@ body {
 table {
   color: black;
   border-collapse: collapse;
-  text-align: center;
+  text-align: left;
 }
 
 .dataTable th {

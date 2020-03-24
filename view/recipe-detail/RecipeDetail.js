@@ -24,7 +24,7 @@ const createTree = recipe => {
   return answer;
 };
 
-const titleClass = "f3 tc white";
+const titleClass = "f3 white";
 
 class RecipeDetail extends React.Component {
   constructor(props) {
