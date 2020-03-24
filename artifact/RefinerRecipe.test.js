@@ -8,8 +8,8 @@ QUnit.module("RefinerRecipe");
 
 QUnit.test("RefinerRecipe properties 0", assert => {
   const recipe = RefinerRecipe[0];
-  assert.equal(recipe.name, "Chloride De-latticing");
-  assert.equal(recipe.inputs.length, 1);
+  assert.equal(recipe.name, "Bonded Chlorine Extraction");
+  assert.equal(recipe.inputs.length, 2);
 });
 
 QUnit.test("RefinerRecipe ingredient 1", assert => {
