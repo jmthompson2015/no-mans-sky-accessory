@@ -1517,7 +1517,7 @@ Product.properties = {
   },
   hadalCore: {
     name: "Hadal Core",
-    baseValue: undefined,
+    baseValue: 92625,
     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/a/ab/PRODUCT.FISHCORE.png/18px-PRODUCT.FISHCORE.png?version=709815958e2db023a98cebc63a9f5390",
     key: "hadalCore"
   },
@@ -2057,7 +2057,7 @@ Product.properties = {
   },
   naniteClusters: {
         name: "Nanite Clusters",
-        baseValue: undefined,
+        baseValue: 12120,
         key: "naniteClusters"
       },
       nanotubeCrate: {
@@ -2086,7 +2086,7 @@ Product.properties = {
   },
   nipnipBuds: {
     name: "NipNip Buds",
-    baseValue: undefined,
+    baseValue: 17776,
     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/2/2c/PRODUCT.NIPBUD.png/18px-PRODUCT.NIPBUD.png?version=6fa5636a951a1ea8eaa90a3fff9bd6c9",
     key: "nipnipBuds"
   },

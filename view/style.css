@@ -1,9 +1,11 @@
 body {
-  /* background-image: url(../../resource/background/SeamlessMetalTextureSmooth.jpg); */
-  font-family: "San Francisco", "Helvetica Neue", Helvetica, sans-serif;
+  color: White;
+  background-color: hsl(205, 25%, 20%);
+  font-family: Futura, "San Francisco", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 table {
+  color: black;
   border-collapse: collapse;
   text-align: center;
 }

@@ -7,7 +7,7 @@ QUnit.module("RecipeNodeVisitor");
 
 QUnit.test("Cryo-Pump", assert => {
   // Setup.
-  const recipe = RecipeUtils.findByOutput(Product.CRYO_PUMP);
+  const recipe = RecipeUtils.findByOutput(Product.CRYO_PUMP)[0];
   const visitor = new RecipeNodeVisitor();
 
   // Run.

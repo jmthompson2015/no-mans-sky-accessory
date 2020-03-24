@@ -58,6 +58,7 @@ const BASE_VALUES = {
   geodesite: 150000,
   glass: 200,
   grantine: 25000,
+  hadalCore: 92625,
   heatCapacitor: 180000,
   hermeticSeal: 800,
   herox: 25000,
@@ -75,6 +76,8 @@ const BASE_VALUES = {
   microprocessor: 2000,
   mindControlDevice: 75000,
   mineralCompressor: 75000,
+  naniteClusters: 12120, // estimate: Silver 15x + Gold 15x + Platinum 25x
+  nipnipBuds: 17776,
   nitrogenSalt: 50000,
   organicCatalyst: 320000,
   oxygenCapsule: 350,
@@ -112,13 +115,7 @@ const writeFile = (outputFile, content) => {
 };
 
 const extractLinkName = anchorRow => {
-  const anchor = StringUtilities.Extractor.between(
-    anchorRow,
-    "<a",
-    "</a>",
-    false,
-    true
-  );
+  const anchor = StringUtilities.Extractor.between(anchorRow, "<a", "</a>", false, true);
 
   return StringUtilities.XMLExtractor.tagAttribute(anchor, "a", "title");
 };
@@ -151,11 +148,7 @@ const createProductString = dataRow => {
       const name = extractLinkName(row);
       const enumValue = EnumGenerator.createEnumValue(name);
       const baseValue = BASE_VALUES[enumValue];
-      const image = StringUtilities.XMLExtractor.tagAttribute(
-        dataRow,
-        "img",
-        "src"
-      );
+      const image = StringUtilities.XMLExtractor.tagAttribute(dataRow, "img", "src");
 
       return `  ${enumValue}: {
     name: "${name}",
@@ -184,12 +177,7 @@ ProductConverter.convert = () => {
       data2,
       '<span class="mw-headline" id="Crafting_Tree">Crafting Tree</span>'
     );
-    const dataSections = StringUtilities.Extractor.list(
-      data3,
-      "<li",
-      "</li>",
-      true
-    );
+    const dataSections = StringUtilities.Extractor.list(data3, "<li", "</li>", true);
 
     let array1 = [];
     let array2 = [];
@@ -197,11 +185,7 @@ ProductConverter.convert = () => {
     dataSections.forEach(section => {
       const mySection0 = section.replace(/\n/g, "");
       const mySection1 = mySection0.replace(/,/g, " ");
-      const mySection2 = StringUtilities.Replacer.replaceAll(
-        mySection1,
-        "&#39;",
-        "'"
-      );
+      const mySection2 = StringUtilities.Replacer.replaceAll(mySection1, "&#39;", "'");
       const mySection = mySection2.replace(/\s+/g, " ");
       array1 = R.append(createProductEnum(mySection), array1);
       array2 = R.append(createProductString(mySection), array2);

@@ -1,16 +1,254 @@
-// GENERATED FILE: Do not edit.
-
 import Device from "./Device.js";
 import Ingredient from "./Ingredient.js";
 import Product from "./Product.js";
 import Resource from "./Resource.js";
 
-const productIngredient = (productKey, amount) =>
-  Ingredient.create({ productKey, amount });
-const resourceIngredient = (resourceKey, amount) =>
-  Ingredient.create({ resourceKey, amount });
+const productIngredient = (productKey, amount) => Ingredient.create({ productKey, amount });
+const resourceIngredient = (resourceKey, amount) => Ingredient.create({ resourceKey, amount });
 
 const RefinerRecipe = [
+  // Chlorine
+  {
+    name: "Bonded Chlorine Extraction",
+    output: resourceIngredient(Resource.CHLORINE, 2),
+    inputs: [resourceIngredient(Resource.KELP_SAC, 1), resourceIngredient(Resource.OXYGEN, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Chloride De-latticing",
+    output: resourceIngredient(Resource.CHLORINE, 150),
+    inputs: [productIngredient(Product.CHLORIDE_LATTICE, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Concentrate Salt",
+    output: resourceIngredient(Resource.CHLORINE, 1),
+    inputs: [resourceIngredient(Resource.SALT, 2)],
+    device: Device.REFINER
+  },
+  {
+    name: "Dissolve Natural Salts",
+    output: resourceIngredient(Resource.CHLORINE, 2),
+    inputs: [resourceIngredient(Resource.KELP_SAC, 1), resourceIngredient(Resource.SALT, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Dissolve Natural Salts",
+    output: resourceIngredient(Resource.CHLORINE, 2),
+    inputs: [resourceIngredient(Resource.KELP_SAC, 1), resourceIngredient(Resource.CHLORINE, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Efficient Salt Evaporation",
+    output: resourceIngredient(Resource.CHLORINE, 5),
+    inputs: [resourceIngredient(Resource.SALT, 2), resourceIngredient(Resource.OXYGEN, 2)],
+    device: Device.REFINER
+  },
+  {
+    name: "Pugneum Washing",
+    output: resourceIngredient(Resource.CHLORINE, 2),
+    inputs: [resourceIngredient(Resource.KELP_SAC, 1), resourceIngredient(Resource.PUGNEUM, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Salt Production",
+    output: resourceIngredient(Resource.CHLORINE, 6),
+    inputs: [resourceIngredient(Resource.CHLORINE, 1), resourceIngredient(Resource.OXYGEN, 2)],
+    device: Device.REFINER
+  },
+  // ///////////////////////////////////////////////////////////////////////////////////////////////
+  // Chromatic Metal
+  {
+    name: "Chromatic Metal Fusion",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 2),
+    inputs: [resourceIngredient(Resource.CADMIUM, 1), resourceIngredient(Resource.PURE_FERRITE, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Chromatic Metal Fusion",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 3),
+    inputs: [resourceIngredient(Resource.EMERIL, 1), resourceIngredient(Resource.PURE_FERRITE, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Chromatic Metal Fusion",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 1),
+    inputs: [resourceIngredient(Resource.COPPER, 1), resourceIngredient(Resource.PURE_FERRITE, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Chromatic Metal Fusion",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 4),
+    inputs: [resourceIngredient(Resource.INDIUM, 1), resourceIngredient(Resource.PURE_FERRITE, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Chromatic Stellar Fusion",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 5),
+    inputs: [
+      resourceIngredient(Resource.SILVER, 1),
+      resourceIngredient(Resource.GOLD, 1),
+      resourceIngredient(Resource.COPPER, 1)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Chromatic Stellar Fusion",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 10),
+    inputs: [
+      resourceIngredient(Resource.SILVER, 1),
+      resourceIngredient(Resource.GOLD, 1),
+      resourceIngredient(Resource.CADMIUM, 1)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Chromatic Stellar Fusion",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 20),
+    inputs: [
+      resourceIngredient(Resource.SILVER, 1),
+      resourceIngredient(Resource.GOLD, 1),
+      resourceIngredient(Resource.EMERIL, 1)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Chromatic Stellar Fusion",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 30),
+    inputs: [
+      resourceIngredient(Resource.SILVER, 1),
+      resourceIngredient(Resource.GOLD, 1),
+      resourceIngredient(Resource.INDIUM, 1)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Extract Chromatic Material",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 1),
+    inputs: [resourceIngredient(Resource.CADMIUM, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Extract Chromatic Material",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 4),
+    inputs: [resourceIngredient(Resource.INDIUM, 2)],
+    device: Device.REFINER
+  },
+  {
+    name: "Extract Chromatic Material",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 3),
+    inputs: [resourceIngredient(Resource.EMERIL, 2)],
+    device: Device.REFINER
+  },
+  {
+    name: "Extract Chromatic Material",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 1),
+    inputs: [resourceIngredient(Resource.COPPER, 2)],
+    device: Device.REFINER
+  },
+  {
+    name: "Extract Chromatic Material",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 2),
+    inputs: [resourceIngredient(Resource.ACTIVATED_CADMIUM, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Extract Chromatic Material",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 4),
+    inputs: [resourceIngredient(Resource.ACTIVATED_INDIUM, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Extract Chromatic Material",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 3),
+    inputs: [resourceIngredient(Resource.ACTIVATED_EMERIL, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Extract Chromatic Material",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 1),
+    inputs: [resourceIngredient(Resource.ACTIVATED_COPPER, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Stellar / Metal Fusion",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 4),
+    inputs: [
+      resourceIngredient(Resource.ACTIVATED_CADMIUM, 1),
+      resourceIngredient(Resource.PURE_FERRITE, 1)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Stellar / Metal Fusion",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 8),
+    inputs: [
+      resourceIngredient(Resource.ACTIVATED_INDIUM, 1),
+      resourceIngredient(Resource.PURE_FERRITE, 1)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Stellar / Metal Fusion",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 6),
+    inputs: [
+      resourceIngredient(Resource.ACTIVATED_EMERIL, 1),
+      resourceIngredient(Resource.PURE_FERRITE, 1)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Stellar / Metal Fusion",
+    output: resourceIngredient(Resource.CHROMATIC_METAL, 2),
+    inputs: [
+      resourceIngredient(Resource.ACTIVATED_COPPER, 1),
+      resourceIngredient(Resource.PURE_FERRITE, 1)
+    ],
+    device: Device.REFINER
+  },
+  // ///////////////////////////////////////////////////////////////////////////////////////////////
+  // Nanite Clusters
+  {
+    name: "Alchemical Construction",
+    output: productIngredient(Product.NANITE_CLUSTERS, 1),
+    inputs: [resourceIngredient(Resource.FAECIUM, 1), resourceIngredient(Resource.HEXITE, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Doom Cycling",
+    output: productIngredient(Product.NANITE_CLUSTERS, 50),
+    inputs: [productIngredient(Product.HADAL_CORE, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Reality Warping",
+    output: productIngredient(Product.NANITE_CLUSTERS, 1),
+    inputs: [resourceIngredient(Resource.PLATINUM, 35)],
+    device: Device.REFINER
+  },
+  {
+    name: "Reality Filtering",
+    output: productIngredient(Product.NANITE_CLUSTERS, 1),
+    inputs: [resourceIngredient(Resource.PUGNEUM, 25)],
+    device: Device.REFINER
+  },
+  {
+    name: "Recyle Waste Materials",
+    output: productIngredient(Product.NANITE_CLUSTERS, 1),
+    inputs: [resourceIngredient(Resource.RUNAWAY_MOULD, 5)],
+    device: Device.REFINER
+  },
+  {
+    name: "Transmutation",
+    output: productIngredient(Product.NANITE_CLUSTERS, 1),
+    inputs: [
+      resourceIngredient(Resource.SILVER, 15),
+      resourceIngredient(Resource.GOLD, 15),
+      resourceIngredient(Resource.PLATINUM, 25)
+    ],
+    device: Device.REFINER
+  },
+  // ///////////////////////////////////////////////////////////////////////////////////////////////
   // {
   //   name: "Alchemical Construction",
   //   output: resourceIngredient(Resource.GOLD, 1),
@@ -27,18 +265,6 @@ const RefinerRecipe = [
   //   name: "Metal Restructuring",
   //   output: resourceIngredient(Resource.PYRITE, 1),
   //   inputs: [resourceIngredient(Resource.GOLD, 1)],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Reality Warping",
-  //   output: productIngredient(Product.NANITE_CLUSTERS, 1),
-  //   inputs: [resourceIngredient(Resource.PLATINUM, 5)],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Reality Filtering",
-  //   output: productIngredient(Product.NANITE_CLUSTERS, 1),
-  //   inputs: [resourceIngredient(Resource.PUGNEUM, 10)],
   //   device: Device.REFINER
   // },
   // {
@@ -77,12 +303,6 @@ const RefinerRecipe = [
   //   inputs: [productIngredient(Product.TETRACOBALT, 1)],
   //   device: Device.REFINER
   // },
-  {
-    name: "Chloride De-latticing",
-    output: resourceIngredient(Resource.CHLORINE, 150),
-    inputs: [productIngredient(Product.CHLORIDE_LATTICE, 1)],
-    device: Device.REFINER
-  },
   // {
   //   name: "Sodium Stabilisation",
   //   output: resourceIngredient(Resource.SODIUM_NITRATE, 150),
@@ -156,54 +376,6 @@ const RefinerRecipe = [
   //   device: Device.REFINER
   // },
   // {
-  //   name: "Extract Chromatic Material",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 1),
-  //   inputs: [resourceIngredient(Resource.CADMIUM, 1)],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Extract Chromatic Material",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 4),
-  //   inputs: [resourceIngredient(Resource.INDIUM, 2)],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Extract Chromatic Material",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 3),
-  //   inputs: [resourceIngredient(Resource.EMERIL, 2)],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Extract Chromatic Material",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 1),
-  //   inputs: [resourceIngredient(Resource.COPPER, 2)],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Extract Chromatic Material",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 2),
-  //   inputs: [resourceIngredient(Resource.ACTIVATED_CADMIUM, 1)],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Extract Chromatic Material",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 4),
-  //   inputs: [resourceIngredient(Resource.ACTIVATED_INDIUM, 1)],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Extract Chromatic Material",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 3),
-  //   inputs: [resourceIngredient(Resource.ACTIVATED_EMERIL, 1)],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Extract Chromatic Material",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 1),
-  //   inputs: [resourceIngredient(Resource.ACTIVATED_COPPER, 1)],
-  //   device: Device.REFINER
-  // },
-  // {
   //   name: "Ferrite Dust extraction",
   //   output: resourceIngredient(Resource.FERRITE_DUST, 1),
   //   inputs: [resourceIngredient(Resource.PARAFFINIUM, 1)],
@@ -239,12 +411,6 @@ const RefinerRecipe = [
   //   inputs: [resourceIngredient(Resource.PHOSPHORUS, 1)],
   //   device: Device.REFINER
   // },
-  {
-    name: "Concentrate Salt",
-    output: resourceIngredient(Resource.CHLORINE, 1),
-    inputs: [resourceIngredient(Resource.SALT, 2)],
-    device: Device.REFINER
-  },
   // {
   //   name: "Salt Production",
   //   output: resourceIngredient(Resource.SALT, 2),
@@ -273,12 +439,6 @@ const RefinerRecipe = [
   //   name: "Recyle Waste Materials",
   //   output: resourceIngredient(Resource.VISCOUS_FLUIDS, 1),
   //   inputs: [resourceIngredient(Resource.RESIDUAL_GOOP, 1)],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Recyle Waste Materials",
-  //   output: productIngredient(Product.NANITE_CLUSTERS, 1),
-  //   inputs: [resourceIngredient(Resource.RUNAWAY_MOULD, 5)],
   //   device: Device.REFINER
   // },
   // {
@@ -395,27 +555,18 @@ const RefinerRecipe = [
   //   inputs: [productIngredient(Product.GRANTINE, 1)],
   //   device: Device.REFINER
   // },
-  // {
-  //   name: "Extreme Alloy Separation",
-  //   output: resourceIngredient(Resource.PLATINUM, 250),
-  //   inputs: [productIngredient(Product.GEODESITE, 1)],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Extreme Alloy Separation",
-  //   output: resourceIngredient(Resource.PLATINUM, 250),
-  //   inputs: [productIngredient(Product.IRIDESITE, 1)],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Alchemical Construction",
-  //   output: productIngredient(Product.NANITE_CLUSTERS, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.COPRITE, 1),
-  //     resourceIngredient(Resource.HEXITE, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
+  {
+    name: "Extreme Alloy Separation",
+    output: resourceIngredient(Resource.PLATINUM, 250),
+    inputs: [productIngredient(Product.GEODESITE, 1)],
+    device: Device.REFINER
+  },
+  {
+    name: "Extreme Alloy Separation",
+    output: resourceIngredient(Resource.PLATINUM, 250),
+    inputs: [productIngredient(Product.IRIDESITE, 1)],
+    device: Device.REFINER
+  },
   // {
   //   name: "Alchemical Construction",
   //   output: resourceIngredient(Resource.GOLD, 1),
@@ -425,15 +576,12 @@ const RefinerRecipe = [
   //   ],
   //   device: Device.REFINER
   // },
-  // {
-  //   name: "Transmutation",
-  //   output: resourceIngredient(Resource.PLATINUM, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.SILVER, 1),
-  //     resourceIngredient(Resource.GOLD, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
+  {
+    name: "Transmutation",
+    output: resourceIngredient(Resource.PLATINUM, 1),
+    inputs: [resourceIngredient(Resource.SILVER, 1), resourceIngredient(Resource.GOLD, 1)],
+    device: Device.REFINER
+  }
   // {
   //   name: "Harness Energy",
   //   output: resourceIngredient(Resource.CONDENSED_CARBON, 2),
@@ -821,24 +969,6 @@ const RefinerRecipe = [
   //   ],
   //   device: Device.REFINER
   // },
-  {
-    name: "Efficient Salt Evaporation",
-    output: resourceIngredient(Resource.CHLORINE, 5),
-    inputs: [
-      resourceIngredient(Resource.SALT, 2),
-      resourceIngredient(Resource.OXYGEN, 2)
-    ],
-    device: Device.REFINER
-  },
-  {
-    name: "Salt Production",
-    output: resourceIngredient(Resource.CHLORINE, 6),
-    inputs: [
-      resourceIngredient(Resource.CHLORINE, 1),
-      resourceIngredient(Resource.OXYGEN, 2)
-    ],
-    device: Device.REFINER
-  },
   // {
   //   name: "Efficient Cobalt Ionisation",
   //   output: resourceIngredient(Resource.IONISED_COBALT, 5),
@@ -974,15 +1104,6 @@ const RefinerRecipe = [
   //   ],
   //   device: Device.REFINER
   // },
-  {
-    name: "Bonded Chlorine Extraction",
-    output: resourceIngredient(Resource.CHLORINE, 2),
-    inputs: [
-      resourceIngredient(Resource.KELP_SAC, 1),
-      resourceIngredient(Resource.OXYGEN, 1)
-    ],
-    device: Device.REFINER
-  },
   // {
   //   name: "Oxygenate Microbes",
   //   output: resourceIngredient(Resource.COPRITE, 3),
@@ -1001,15 +1122,6 @@ const RefinerRecipe = [
   //   ],
   //   device: Device.REFINER
   // },
-  {
-    name: "Pugneum Washing",
-    output: resourceIngredient(Resource.CHLORINE, 2),
-    inputs: [
-      resourceIngredient(Resource.KELP_SAC, 1),
-      resourceIngredient(Resource.PUGNEUM, 1)
-    ],
-    device: Device.REFINER
-  },
   // {
   //   name: "Extract Organic Sodium",
   //   output: resourceIngredient(Resource.SODIUM, 2),
@@ -1127,15 +1239,6 @@ const RefinerRecipe = [
   //   ],
   //   device: Device.REFINER
   // },
-  {
-    name: "Dissolve Natural Salts",
-    output: resourceIngredient(Resource.CHLORINE, 2),
-    inputs: [
-      resourceIngredient(Resource.KELP_SAC, 1),
-      resourceIngredient(Resource.SALT, 1)
-    ],
-    device: Device.REFINER
-  },
   // {
   //   name: "Ionise Bulbs",
   //   output: resourceIngredient(Resource.IONISED_COBALT, 2),
@@ -1145,15 +1248,6 @@ const RefinerRecipe = [
   //   ],
   //   device: Device.REFINER
   // },
-  {
-    name: "Dissolve Natural Salts",
-    output: resourceIngredient(Resource.CHLORINE, 2),
-    inputs: [
-      resourceIngredient(Resource.KELP_SAC, 1),
-      resourceIngredient(Resource.CHLORINE, 1)
-    ],
-    device: Device.REFINER
-  }
   // {
   //   name: "Pugneum Alchemy",
   //   output: resourceIngredient(Resource.GOLD, 2),
@@ -1209,42 +1303,6 @@ const RefinerRecipe = [
   //   device: Device.REFINER
   // },
   // {
-  //   name: "Chromatic Metal Fusion",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 2),
-  //   inputs: [
-  //     resourceIngredient(Resource.CADMIUM, 1),
-  //     resourceIngredient(Resource.PURE_FERRITE, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Chromatic Metal Fusion",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 3),
-  //   inputs: [
-  //     resourceIngredient(Resource.EMERIL, 1),
-  //     resourceIngredient(Resource.PURE_FERRITE, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Chromatic Metal Fusion",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.COPPER, 1),
-  //     resourceIngredient(Resource.PURE_FERRITE, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Chromatic Metal Fusion",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 4),
-  //   inputs: [
-  //     resourceIngredient(Resource.INDIUM, 1),
-  //     resourceIngredient(Resource.PURE_FERRITE, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
   //   name: "Stellar / Metal Fusion",
   //   output: resourceIngredient(Resource.MAGNETISED_FERRITE, 4),
   //   inputs: [
@@ -1277,42 +1335,6 @@ const RefinerRecipe = [
   //   inputs: [
   //     resourceIngredient(Resource.ACTIVATED_COPPER, 1),
   //     resourceIngredient(Resource.FERRITE_DUST, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Stellar / Metal Fusion",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 4),
-  //   inputs: [
-  //     resourceIngredient(Resource.ACTIVATED_CADMIUM, 1),
-  //     resourceIngredient(Resource.PURE_FERRITE, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Stellar / Metal Fusion",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 8),
-  //   inputs: [
-  //     resourceIngredient(Resource.ACTIVATED_INDIUM, 1),
-  //     resourceIngredient(Resource.PURE_FERRITE, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Stellar / Metal Fusion",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 6),
-  //   inputs: [
-  //     resourceIngredient(Resource.ACTIVATED_EMERIL, 1),
-  //     resourceIngredient(Resource.PURE_FERRITE, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Stellar / Metal Fusion",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 2),
-  //   inputs: [
-  //     resourceIngredient(Resource.ACTIVATED_COPPER, 1),
-  //     resourceIngredient(Resource.PURE_FERRITE, 1)
   //   ],
   //   device: Device.REFINER
   // },
@@ -1759,16 +1781,6 @@ const RefinerRecipe = [
   //   device: Device.REFINER
   // },
   // {
-  //   name: "Transmutation",
-  //   output: productIngredient(Product.NANITE_CLUSTERS, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.SILVER, 250),
-  //     resourceIngredient(Resource.GOLD, 250),
-  //     resourceIngredient(Resource.PLATINUM, 250)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
   //   name: "Deep Metal Compression",
   //   output: resourceIngredient(Resource.MAGNETISED_FERRITE, 5),
   //   inputs: [
@@ -1919,62 +1931,12 @@ const RefinerRecipe = [
   //   device: Device.REFINER
   // },
   // {
-  //   name: "Chromatic Stellar Fusion",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 5),
-  //   inputs: [
-  //     resourceIngredient(Resource.SILVER, 1),
-  //     resourceIngredient(Resource.GOLD, 1),
-  //     resourceIngredient(Resource.COPPER, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Chromatic Stellar Fusion",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 10),
-  //   inputs: [
-  //     resourceIngredient(Resource.SILVER, 1),
-  //     resourceIngredient(Resource.GOLD, 1),
-  //     resourceIngredient(Resource.CADMIUM, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Chromatic Stellar Fusion",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 20),
-  //   inputs: [
-  //     resourceIngredient(Resource.SILVER, 1),
-  //     resourceIngredient(Resource.GOLD, 1),
-  //     resourceIngredient(Resource.EMERIL, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Chromatic Stellar Fusion",
-  //   output: resourceIngredient(Resource.CHROMATIC_METAL, 30),
-  //   inputs: [
-  //     resourceIngredient(Resource.SILVER, 1),
-  //     resourceIngredient(Resource.GOLD, 1),
-  //     resourceIngredient(Resource.INDIUM, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
   //   name: "Chromatic Alchemy",
   //   output: resourceIngredient(Resource.GOLD, 10),
   //   inputs: [
   //     resourceIngredient(Resource.FERRITE_DUST, 1),
   //     resourceIngredient(Resource.OXYGEN, 1),
   //     resourceIngredient(Resource.EMERIL, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Chromatic Alchemy",
-  //   output: resourceIngredient(Resource.PLATINUM, 10),
-  //   inputs: [
-  //     resourceIngredient(Resource.FERRITE_DUST, 1),
-  //     resourceIngredient(Resource.OXYGEN, 1),
-  //     resourceIngredient(Resource.CHROMATIC_METAL, 250)
   //   ],
   //   device: Device.REFINER
   // },

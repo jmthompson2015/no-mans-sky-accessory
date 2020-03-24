@@ -142,7 +142,7 @@ class DataTable extends React.Component {
         },
         ReactDOMFactories.td(
           {
-            className: "f6 tl"
+            className: "f6 tl white"
           },
           rowCount
         )
@@ -163,7 +163,7 @@ class DataTable extends React.Component {
         },
         ReactDOMFactories.td(
           {
-            className: "f6 tl"
+            className: "f6 tl white"
           },
           rowCount
         )
