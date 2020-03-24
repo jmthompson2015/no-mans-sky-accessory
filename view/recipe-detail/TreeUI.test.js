@@ -39,19 +39,22 @@ QUnit.test("Cryo-Pump", assert => {
     "<ul>" +
     "<li>Enriched Carbon x1</li>" +
     "<ul>" +
-    "<li>Condensed Carbon x50</li>" +
-    "<li>Radon x250</li>" +
+    "<li>Radon x100</li>" +
+    "<li>Carbon x20</li>" +
+    "<li>Salt x10</li>" +
     "</ul>" +
     "<li>Nitrogen Salt x1</li>" +
     "<ul>" +
-    "<li>Condensed Carbon x50</li>" +
-    "<li>Nitrogen x250</li>" +
+    "<li>Nitrogen x100</li>" +
+    "<li>Carbon x20</li>" +
+    "<li>Salt x10</li>" +
     "</ul>" +
     "</ul>" +
     "<li>Thermic Condensate x1</li>" +
     "<ul>" +
-    "<li>Condensed Carbon x50</li>" +
-    "<li>Sulphurine x250</li>" +
+    "<li>Sulphurine x100</li>" +
+    "<li>Carbon x20</li>" +
+    "<li>Salt x10</li>" +
     "</ul>" +
     "</ul>";
   assert.equal(result, expected);

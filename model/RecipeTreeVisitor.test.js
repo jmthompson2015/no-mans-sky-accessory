@@ -51,33 +51,53 @@ QUnit.test("Cryo-Pump", assert => {
   assert.ok(enrichedNode);
   assert.equal(
     RecipeUtils.toString(enrichedNode.content),
-    "Enriched Carbon x1 \u2190 Condensed Carbon x50 + Radon x250"
+    "Enriched Carbon x1 \u2190 Radon x100 + Carbon x20 + Salt x10"
   );
-  assert.equal(enrichedNode.children.length, 2);
-  assert.equal(IngredientUtils.toString(enrichedNode.children[0].content), "Condensed Carbon x50");
-  assert.equal(IngredientUtils.toString(enrichedNode.children[1].content), "Radon x250");
+  assert.equal(enrichedNode.children.length, 3);
+  assert.equal(IngredientUtils.toString(enrichedNode.children[0].content), "Radon x100");
+  assert.equal(IngredientUtils.toString(enrichedNode.children[1].content), "Carbon x20");
+  assert.equal(IngredientUtils.toString(enrichedNode.children[2].content), "Salt x10");
 
   // Nitrogen Salt
   const saltNode = hotIceNode.children[1];
   assert.ok(saltNode);
   assert.equal(
     RecipeUtils.toString(saltNode.content),
-    "Nitrogen Salt x1 \u2190 Condensed Carbon x50 + Nitrogen x250"
+    "Nitrogen Salt x1 \u2190 Nitrogen x100 + Carbon x20 + Salt x10"
   );
-  assert.equal(saltNode.children.length, 2);
-  assert.equal(IngredientUtils.toString(saltNode.children[0].content), "Condensed Carbon x50");
-  assert.equal(IngredientUtils.toString(saltNode.children[1].content), "Nitrogen x250");
+  assert.equal(saltNode.children.length, 3);
+  assert.equal(IngredientUtils.toString(saltNode.children[0].content), "Nitrogen x100");
+  assert.equal(IngredientUtils.toString(saltNode.children[1].content), "Carbon x20");
+  assert.equal(IngredientUtils.toString(saltNode.children[2].content), "Salt x10");
 
   // Thermic Condensate
   const thermicNode = result.children[1];
   assert.ok(thermicNode);
   assert.equal(
     RecipeUtils.toString(thermicNode.content),
-    "Thermic Condensate x1 \u2190 Condensed Carbon x50 + Sulphurine x250"
+    "Thermic Condensate x1 \u2190 Sulphurine x100 + Carbon x20 + Salt x10"
   );
-  assert.equal(thermicNode.children.length, 2);
-  assert.equal(IngredientUtils.toString(thermicNode.children[0].content), "Condensed Carbon x50");
-  assert.equal(IngredientUtils.toString(thermicNode.children[1].content), "Sulphurine x250");
+  assert.equal(thermicNode.children.length, 3);
+  assert.equal(IngredientUtils.toString(thermicNode.children[0].content), "Sulphurine x100");
+  assert.equal(IngredientUtils.toString(thermicNode.children[1].content), "Carbon x20");
+  assert.equal(IngredientUtils.toString(thermicNode.children[2].content), "Salt x10");
+});
+
+QUnit.test("Herox", assert => {
+  // Setup.
+  const recipe = RecipeUtils.findByOutput(Product.HEROX)[0];
+  const visitor = new RecipeTreeVisitor();
+
+  // Run.
+  const result = RecipeUtils.accept(recipe, visitor);
+
+  // Verify.
+  assert.ok(result);
+  console.log(`result = ${JSON.stringify(result)}`);
+  assert.equal(result.children.length, 3);
+  assert.equal(IngredientUtils.toString(result.children[0].content), "Ammonia x30");
+  assert.equal(IngredientUtils.toString(result.children[1].content), "Cobalt x60");
+  assert.equal(IngredientUtils.toString(result.children[2].content), "Tritium x20");
 });
 
 const RecipeTreeVisitorTest = {};

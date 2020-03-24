@@ -8,7 +8,7 @@ QUnit.module("RefinerRecipe");
 
 QUnit.test("RefinerRecipe properties 0", assert => {
   const recipe = RefinerRecipe[0];
-  assert.equal(recipe.name, "Bonded Chlorine Extraction");
+  assert.equal(recipe.name, "Enviromental Element Transfer");
   assert.equal(recipe.inputs.length, 2);
 });
 

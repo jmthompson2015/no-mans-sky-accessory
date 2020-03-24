@@ -34,14 +34,14 @@ QUnit.test("Cryo-Pump", assert => {
 
   // Verify.
   assert.ok(visitor.result);
-  assert.equal(visitor.result.length, 4);
+  assert.equal(visitor.result.length, 5);
   // console.log(
   //   `visitor.result = ${R.map(r => IngredientUtils.toString(r), visitor.result).join("\n")}`
   // );
-  assert.equal(IngredientUtils.toString(visitor.result[0]), "Condensed Carbon x150");
+  assert.equal(IngredientUtils.toString(visitor.result[0]), "Carbon x60");
   assert.equal(
     IngredientUtils.toString(visitor.result[visitor.result.length - 1]),
-    "Sulphurine x250"
+    "Sulphurine x100"
   );
 });
 

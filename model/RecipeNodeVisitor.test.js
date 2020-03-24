@@ -28,7 +28,7 @@ QUnit.test("Cryo-Pump", assert => {
   );
   assert.equal(
     RecipeUtils.toString(visitor.result[visitor.result.length - 1]),
-    "Thermic Condensate x1 \u2190 Condensed Carbon x50 + Sulphurine x250"
+    "Thermic Condensate x1 \u2190 Sulphurine x100 + Carbon x20 + Salt x10"
   );
 });
 
