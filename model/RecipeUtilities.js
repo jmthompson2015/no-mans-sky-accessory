@@ -25,9 +25,9 @@ RecipeUtilities.findByOutput = thingKey => {
   const recipes1 = R.filter(filterFunction, CrafterRecipe);
   const recipes2 = R.filter(filterFunction, RefinerRecipe);
   const recipes = R.concat(recipes1, recipes2);
-  const byRating = R.descend(RecipeUtilities.rating);
+  const byRatio = R.descend(RecipeUtilities.outputInputRatio);
 
-  return R.sort(byRating, recipes);
+  return R.sort(byRatio, recipes);
 };
 
 RecipeUtilities.inputValue = recipe => {
@@ -40,7 +40,7 @@ RecipeUtilities.inputValue = recipe => {
   return R.reduce(reduceFunction, 0, recipe.inputs);
 };
 
-RecipeUtilities.rating = recipe => {
+RecipeUtilities.outputInputRatio = recipe => {
   const outputValue = RecipeUtilities.outputValue(recipe);
   const inputValue = RecipeUtilities.inputValue(recipe);
 

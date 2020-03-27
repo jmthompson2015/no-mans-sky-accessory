@@ -91,7 +91,7 @@ QUnit.test("findByOutput()", assert => {
 
   const recipe0 = result[0];
   assert.ok(recipe0);
-  assert.equal(round4(RecipeUtilities.rating(recipe0)), 16.0533);
+  assert.equal(round4(RecipeUtilities.outputInputRatio(recipe0)), 16.0533);
   assert.equal(recipe0.name, "Bonded Chlorine Extraction");
   assert.ok(recipe0.output);
   assert.equal(recipe0.output.resourceKey, outputKey);
@@ -102,7 +102,7 @@ QUnit.test("findByOutput()", assert => {
 
   const recipeLast = R.last(result);
   assert.ok(recipeLast);
-  assert.equal(round4(RecipeUtilities.rating(recipeLast)), 1.0067);
+  assert.equal(round4(RecipeUtilities.outputInputRatio(recipeLast)), 1.0067);
   assert.equal(recipeLast.name, "Concentrate Salt");
   assert.ok(recipeLast.output);
   assert.equal(recipeLast.output.resourceKey, outputKey);
@@ -111,7 +111,7 @@ QUnit.test("findByOutput()", assert => {
   assert.equal(recipeLast.inputs[0].resourceKey, Resource.SALT);
 });
 
-QUnit.test("inputValue() 0", assert => {
+QUnit.test("inputValue()", assert => {
   // Setup.
   const recipe = RecipeUtilities.findByName("Chloride De-latticing");
 
@@ -122,12 +122,12 @@ QUnit.test("inputValue() 0", assert => {
   assert.equal(result, 6150);
 });
 
-QUnit.test("rating() 0", assert => {
+QUnit.test("outputInputRatio()", assert => {
   // Setup.
   const recipe = RecipeUtilities.findByName("Chloride De-latticing");
 
   // Run.
-  const result = RecipeUtilities.rating(recipe);
+  const result = RecipeUtilities.outputInputRatio(recipe);
 
   // Verify.
   assert.equal(round4(result), 14.6829);
@@ -144,7 +144,7 @@ QUnit.test("outputValue() 0", assert => {
   assert.equal(result, 90300);
 });
 
-QUnit.test("toString() 0", assert => {
+QUnit.test("toString()", assert => {
   // Setup.
   const recipe = RecipeUtilities.findByName("Chloride De-latticing");
 
@@ -156,7 +156,7 @@ QUnit.test("toString() 0", assert => {
   assert.equal(result, "Chlorine x150 \u2190 Chloride Lattice x1");
 });
 
-QUnit.test("toString() 0 showName", assert => {
+QUnit.test("toString() showName", assert => {
   // Setup.
   const recipe = RecipeUtilities.findByName("Chloride De-latticing");
   const showName = true;

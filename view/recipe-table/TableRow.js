@@ -3,6 +3,7 @@
 import Resolver from "../../artifact/Resolver.js";
 
 import IngredientUtils from "../../model/IngredientUtilities.js";
+import RecipeResourceUtils from "../../model/RecipeResourceUtilities.js";
 import RecipeUtils from "../../model/RecipeUtilities.js";
 
 const TableRow = {};
@@ -19,17 +20,18 @@ TableRow.createTableRow = recipe => {
   const inputThing2 = IngredientUtils.thing(ingredient2);
   const inputThing3 = IngredientUtils.thing(ingredient3);
 
-  const inputCost = RecipeUtils.inputValue(recipe);
   const outputTotal = RecipeUtils.outputValue(recipe);
-  const outputTotalPerCost =
-    outputTotal && inputCost ? outputTotal / inputCost : undefined;
+  const inputTotal = RecipeUtils.inputValue(recipe);
+  const resourceTotal = RecipeResourceUtils.resourceValue(recipe);
+  const outputInputRatio = RecipeUtils.outputInputRatio(recipe);
+  const outputResourceRatio = RecipeResourceUtils.outputResourceRatio(recipe);
 
   return {
+    name: recipe.name,
+    device: Resolver.device(recipe.device).name,
     output: outputThing.name,
     outputAmount: output.amount,
     outputValue: outputThing.baseValue,
-    name: recipe.name,
-    device: Resolver.device(recipe.device).name,
     input1: inputThing1 ? inputThing1.name : undefined,
     input1Amount: ingredient1 ? ingredient1.amount : undefined,
     input1Value: inputThing1 ? inputThing1.baseValue : undefined,
@@ -40,8 +42,10 @@ TableRow.createTableRow = recipe => {
     input3Amount: ingredient3 ? ingredient3.amount : undefined,
     input3Value: inputThing3 ? inputThing3.baseValue : undefined,
     outputTotal,
-    inputCost,
-    outputTotalPerCost: round2(outputTotalPerCost)
+    inputTotal,
+    resourceTotal,
+    outputInputRatio: round2(outputInputRatio),
+    outputResourceRatio: round2(outputResourceRatio)
   };
 };
 

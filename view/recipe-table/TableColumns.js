@@ -1,5 +1,15 @@
 const TableColumns = [
   {
+    key: "name",
+    label: "Name",
+    className: "tl"
+  },
+  {
+    key: "device",
+    label: "Device",
+    className: "tl"
+  },
+  {
     key: "output",
     label: "Output",
     className: "tl"
@@ -11,18 +21,8 @@ const TableColumns = [
   },
   {
     key: "outputValue",
-    label: "Base Value",
+    label: "Value Each",
     className: "tr"
-  },
-  {
-    key: "name",
-    label: "Name",
-    className: "tl"
-  },
-  {
-    key: "device",
-    label: "Device",
-    className: "tl"
   },
   {
     key: "input1",
@@ -60,13 +60,23 @@ const TableColumns = [
     className: "tr"
   },
   {
-    key: "inputCost",
-    label: "Cost",
+    key: "inputTotal",
+    label: "Input Total",
     className: "tr"
   },
   {
-    key: "outputTotalPerCost",
-    label: "Output/Cost",
+    key: "resourceTotal",
+    label: "Resource Total",
+    className: "tr"
+  },
+  {
+    key: "outputInputRatio",
+    label: "Output /Input",
+    className: "tr"
+  },
+  {
+    key: "outputResourceRatio",
+    label: "Output /Resource",
     className: "tr"
   }
 ];

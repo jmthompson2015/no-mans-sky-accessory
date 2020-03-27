@@ -11,7 +11,7 @@ const rowData0 = R.concat(crafterRows, refinerRows);
 
 const comparator = (a, b) =>
   a.output === b.output
-    ? R.descend(R.prop("outputTotalPerCost"))(a, b)
+    ? R.descend(R.prop("outputResourceRatio"))(a, b)
     : R.ascend(R.prop("output"))(a, b);
 const rowData = R.sort(comparator, rowData0);
 
