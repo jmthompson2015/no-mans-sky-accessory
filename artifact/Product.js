@@ -2734,7 +2734,7 @@ Product.properties = {
   },
   stormCrystal: {
     name: "Storm Crystal",
-    baseValue: undefined,
+    baseValue: 129150,
     image: "https://gamepedia.cursecdn.com/nomanssky_gamepedia/thumb/c/ca/PRODUCT.STORMCRYSTAL.png/18px-PRODUCT.STORMCRYSTAL.png?version=a27a13898f869bb281442beb5dc257a9",
     key: "stormCrystal"
   },

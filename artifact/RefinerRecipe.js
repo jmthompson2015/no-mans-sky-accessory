@@ -704,6 +704,80 @@ const RefinerRecipe = [
       resourceIngredient(Resource.CHLORINE, 5)
     ],
     device: Device.REFINER
+  },
+  // ///////////////////////////////////////////////////////////////////////////////////////////////
+  // Unstable Plasma
+  {
+    name: "Plasma Pressurisation",
+    output: productIngredient(Product.UNSTABLE_PLASMA, 1),
+    inputs: [
+      resourceIngredient(Resource.OXYGEN, 10),
+      resourceIngredient(Resource.FERRITE_DUST, 20),
+      resourceIngredient(Resource.CARBON, 20)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Plasma Pressurisation",
+    output: productIngredient(Product.UNSTABLE_PLASMA, 1),
+    inputs: [
+      resourceIngredient(Resource.OXYGEN, 10),
+      resourceIngredient(Resource.FERRITE_DUST, 20),
+      resourceIngredient(Resource.CONDENSED_CARBON, 10)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Plasma Pressurisation",
+    output: productIngredient(Product.UNSTABLE_PLASMA, 1),
+    inputs: [
+      resourceIngredient(Resource.OXYGEN, 10),
+      resourceIngredient(Resource.PURE_FERRITE, 20),
+      resourceIngredient(Resource.CARBON, 20)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Plasma Pressurisation",
+    output: productIngredient(Product.UNSTABLE_PLASMA, 1),
+    inputs: [
+      resourceIngredient(Resource.OXYGEN, 10),
+      resourceIngredient(Resource.PURE_FERRITE, 20),
+      resourceIngredient(Resource.CONDENSED_CARBON, 10)
+    ],
+    device: Device.REFINER
+  },
+  // ///////////////////////////////////////////////////////////////////////////////////////////////
+  // Warp Cell
+  {
+    name: "Antimatter Bypass",
+    output: productIngredient(Product.WARP_CELL, 1),
+    inputs: [
+      resourceIngredient(Resource.CONDENSED_CARBON, 25),
+      resourceIngredient(Resource.SODIUM, 10),
+      resourceIngredient(Resource.CHROMATIC_METAL, 250)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Antimatter Bypass",
+    output: productIngredient(Product.WARP_CELL, 1),
+    inputs: [
+      resourceIngredient(Resource.CARBON, 50),
+      resourceIngredient(Resource.SODIUM_NITRATE, 5),
+      resourceIngredient(Resource.CHROMATIC_METAL, 250)
+    ],
+    device: Device.REFINER
+  },
+  {
+    name: "Antimatter Bypass",
+    output: productIngredient(Product.WARP_CELL, 1),
+    inputs: [
+      resourceIngredient(Resource.CONDENSED_CARBON, 25),
+      resourceIngredient(Resource.SODIUM_NITRATE, 5),
+      resourceIngredient(Resource.CHROMATIC_METAL, 250)
+    ],
+    device: Device.REFINER
   }
   // ///////////////////////////////////////////////////////////////////////////////////////////////
   // {
@@ -2334,76 +2408,6 @@ const RefinerRecipe = [
   //     resourceIngredient(Resource.FERRITE_DUST, 1),
   //     resourceIngredient(Resource.OXYGEN, 1),
   //     resourceIngredient(Resource.EMERIL, 1)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Antimatter Bypass",
-  //   output: productIngredient(Product.WARP_CELL, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.CONDENSED_CARBON, 25),
-  //     resourceIngredient(Resource.SODIUM, 10),
-  //     resourceIngredient(Resource.CHROMATIC_METAL, 250)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Antimatter Bypass",
-  //   output: productIngredient(Product.WARP_CELL, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.CARBON, 50),
-  //     resourceIngredient(Resource.SODIUM_NITRATE, 5),
-  //     resourceIngredient(Resource.CHROMATIC_METAL, 250)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Antimatter Bypass",
-  //   output: productIngredient(Product.WARP_CELL, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.CONDENSED_CARBON, 25),
-  //     resourceIngredient(Resource.SODIUM_NITRATE, 5),
-  //     resourceIngredient(Resource.CHROMATIC_METAL, 250)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Plasma Pressurisation",
-  //   output: productIngredient(Product.UNSTABLE_PLASMA, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.OXYGEN, 10),
-  //     resourceIngredient(Resource.FERRITE_DUST, 20),
-  //     resourceIngredient(Resource.CARBON, 20)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Plasma Pressurisation",
-  //   output: productIngredient(Product.UNSTABLE_PLASMA, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.OXYGEN, 10),
-  //     resourceIngredient(Resource.FERRITE_DUST, 20),
-  //     resourceIngredient(Resource.CONDENSED_CARBON, 10)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Plasma Pressurisation",
-  //   output: productIngredient(Product.UNSTABLE_PLASMA, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.OXYGEN, 10),
-  //     resourceIngredient(Resource.PURE_FERRITE, 20),
-  //     resourceIngredient(Resource.CARBON, 20)
-  //   ],
-  //   device: Device.REFINER
-  // },
-  // {
-  //   name: "Plasma Pressurisation",
-  //   output: productIngredient(Product.UNSTABLE_PLASMA, 1),
-  //   inputs: [
-  //     resourceIngredient(Resource.OXYGEN, 10),
-  //     resourceIngredient(Resource.PURE_FERRITE, 20),
-  //     resourceIngredient(Resource.CONDENSED_CARBON, 10)
   //   ],
   //   device: Device.REFINER
   // },

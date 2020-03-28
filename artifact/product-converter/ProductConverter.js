@@ -91,6 +91,7 @@ const BASE_VALUES = {
   sodiumDiode: 3500,
   starshipLaunchFuel: 450,
   stasisDevice: 15600000,
+  stormCrystal: 129150,
   superconductor: 2000000,
   superoxideCrystal: 5100,
   tetracobalt: 6150,

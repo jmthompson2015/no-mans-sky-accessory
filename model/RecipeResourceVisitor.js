@@ -48,6 +48,8 @@ class RecipeResourceVisitor {
         if (recipes2.length > 0) {
           const recipe2 = recipes2[0];
           RecipeUtils.accept(recipe2, this);
+        } else {
+          this.result.push(input);
         }
       }
     });

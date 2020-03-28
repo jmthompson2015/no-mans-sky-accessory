@@ -27,6 +27,17 @@ QUnit.test("outputResourceRatio() Cryo-Pump", assert => {
   assert.equal(round4(result), 95.6023);
 });
 
+QUnit.test("outputResourceRatio() Warp Hypercore", assert => {
+  // Setup.
+  const recipe = RecipeUtils.findByName("Warp Hypercore");
+
+  // Run.
+  const result = RecipeResourceUtilities.outputResourceRatio(recipe);
+
+  // Verify.
+  assert.equal(round4(result), 0.3444);
+});
+
 QUnit.test("resourceValue() Acid", assert => {
   // Setup.
   const recipe = RecipeUtils.findByName("Acid");
@@ -47,6 +58,17 @@ QUnit.test("resourceValue() Cryo-Pump", assert => {
 
   // Verify.
   assert.equal(result, 15690);
+});
+
+QUnit.test("resourceValue() Warp Hypercore", assert => {
+  // Setup.
+  const recipe = RecipeUtils.findByName("Warp Hypercore");
+
+  // Run.
+  const result = RecipeResourceUtilities.resourceValue(recipe);
+
+  // Verify.
+  assert.equal(result, 6605 + 129150);
 });
 
 const RecipeResourceUtilitiesTest = {};
